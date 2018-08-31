@@ -131,9 +131,11 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AlunoController.cs" />
+    <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\CursoController.cs" />
     <Compile Include="Controllers\ProfessorController.cs" />
     <Compile Include="DAL\AlunoDAO.cs" />
+    <Compile Include="DAL\CategoriaDAO.cs" />
     <Compile Include="DAL\CursoDAO.cs" />
     <Compile Include="DAL\ProfessorDAO.cs" />
     <Compile Include="DAL\SingletonContext.cs" />
@@ -141,6 +143,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Aluno.cs" />
+    <Compile Include="Models\CategoriaCurso.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\Curso.cs" />
     <Compile Include="Models\Professor.cs" />
@@ -163,6 +166,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Aluno\" />
+    <Folder Include="Views\Categoria\" />
     <Folder Include="Views\Curso\" />
     <Folder Include="Views\Professor\" />
   </ItemGroup>
