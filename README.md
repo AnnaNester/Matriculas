@@ -13,9 +13,11 @@ Professor:
 - Alterar
 - Excluir
 - Associar professor a um curso ou mais de um
+- Consultar CPF e CEP por WebService
 
 Aluno:
 - Cadastrar
 - Alterar
 - Excluir
 - Associar aluno a um curso
+- Consultar CPF e CEP por WebService
