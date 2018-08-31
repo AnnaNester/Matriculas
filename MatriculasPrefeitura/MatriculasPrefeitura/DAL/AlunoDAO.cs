@@ -7,9 +7,6 @@ namespace MatriculasPrefeitura.DAL
 {
     public class AlunoDAO
     {
-
-
-
         public void CadastrarAluno()
         {
 

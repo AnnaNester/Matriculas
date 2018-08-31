@@ -7,5 +7,19 @@ namespace MatriculasPrefeitura.DAL
 {
     public class CategoriaDAO
     {
+        public static void CadastrarCurso()
+        {
+
+        }
+
+        public static void AlterarCurso()
+        {
+
+        }
+
+        public static void ExcluirCurso()
+        {
+
+        }
     }
 }

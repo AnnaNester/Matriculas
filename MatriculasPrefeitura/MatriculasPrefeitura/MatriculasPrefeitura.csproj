@@ -168,6 +168,7 @@
     <Folder Include="Views\Aluno\" />
     <Folder Include="Views\Categoria\" />
     <Folder Include="Views\Curso\" />
+    <Folder Include="Views\Home\" />
     <Folder Include="Views\Professor\" />
   </ItemGroup>
   <PropertyGroup>
