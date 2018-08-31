@@ -18,7 +18,7 @@ namespace MatriculasOsorio.Models
         [Display(Name = "CPF do Aluno")]
         public string CPFAluno { get; set; }
 
-        [Display(Name = "Cursos matriculado")]
+        [Display(Name = "Curso matriculado")]
         public Curso CursoMatriculado { get; set; }
 
         [Display(Name = "Foto do Aluno")]

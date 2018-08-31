@@ -13,5 +13,20 @@ namespace MatriculasPrefeitura.Controllers
         {
             return View();
         }
+
+        public void CadastrarAluno()
+        {
+
+        }
+
+        public void AlterarAluno()
+        {
+
+        }
+
+        public void ExcluirAluno()
+        {
+
+        }
     }
 }
