@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using MatriculasPrefeitura.Models;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -24,9 +26,16 @@ namespace MatriculasOsorio.Models
         [Required(ErrorMessage = "Campo obrigatório")]
         public Professor ProfessorCurso { get; set; }
 
-        public List<Aluno> AlunosCurso { get; set; }
-
         [Display(Name = "Quantidade de vagas do Curso")]
         public int QtdeVagas { get; set; }
+
+        [Display(Name = "Descrição do Curso")]
+        [Required(ErrorMessage = "Campo obrigatório")]
+        public string DescricaoCurso { get; set; }
+
+        public DateTime DataInicio { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório")]
+        public CategoriaCurso CategoriaCurso { get; set; }
     }
 }

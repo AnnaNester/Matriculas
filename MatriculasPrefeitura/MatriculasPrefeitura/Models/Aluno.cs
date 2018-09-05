@@ -23,5 +23,16 @@ namespace MatriculasOsorio.Models
 
         [Display(Name = "Foto do Aluno")]
         public string FotoAluno { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório")]
+        [Display(Name = "Endereço do Aluno")]
+        public string EnderecoAluno { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório")]
+        [Display(Name = "Senha do Aluno")]
+        public string SenhaAluno { get; set; }
+
+        [Display(Name = "Confirmação da senha")]
+        public string ConfirmacaoAluno { get; set; }
     }
 }
