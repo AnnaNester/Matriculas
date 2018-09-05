@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -133,10 +134,12 @@
     <Compile Include="Controllers\AlunoController.cs" />
     <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\CursoController.cs" />
+    <Compile Include="Controllers\MatriculaController.cs" />
     <Compile Include="Controllers\ProfessorController.cs" />
     <Compile Include="DAL\AlunoDAO.cs" />
     <Compile Include="DAL\CategoriaDAO.cs" />
     <Compile Include="DAL\CursoDAO.cs" />
+    <Compile Include="DAL\MatriculaDAO.cs" />
     <Compile Include="DAL\ProfessorDAO.cs" />
     <Compile Include="DAL\SingletonContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -169,7 +172,9 @@
     <Folder Include="Views\Categoria\" />
     <Folder Include="Views\Curso\" />
     <Folder Include="Views\Home\" />
+    <Folder Include="Views\Matricula\" />
     <Folder Include="Views\Professor\" />
+    <Folder Include="Views\Shared\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
