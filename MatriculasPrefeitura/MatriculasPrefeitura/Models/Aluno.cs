@@ -32,7 +32,9 @@ namespace MatriculasOsorio.Models
         [Display(Name = "Senha do Aluno")]
         public string SenhaAluno { get; set; }
 
+        [Compare("SenhaAluno", ErrorMessage = "Os campos não coincidem!")]
         [Display(Name = "Confirmação da senha")]
+        [NotMapped]
         public string ConfirmacaoAluno { get; set; }
     }
 }
