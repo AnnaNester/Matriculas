@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using MatriculasPrefeitura.Models;
+using System.Data.Entity;
 
 namespace MatriculasOsorio.Models
 {
@@ -11,5 +12,7 @@ namespace MatriculasOsorio.Models
         public DbSet<Curso> Cursos { get; set; }
 
         public DbSet<Aluno> Alunos { get; set; }
+
+        public DbSet<CategoriaCurso> Categorias { get; set; }
     }
 }
