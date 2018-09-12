@@ -32,7 +32,7 @@ namespace MatriculasPrefeitura.DAL
             return context.Categorias.FirstOrDefault(x => x.NomeCategoria.Equals(categoria.NomeCategoria));
         }
 
-        public bool  AlterarCategoria(CategoriaCurso categoria)
+        public static bool AlterarCategoria(CategoriaCurso categoria)
         {
             if (context.Categorias.FirstOrDefault(x => x.NomeCategoria.Equals(categoria.NomeCategoria) && x.CategoriaId != categoria.CategoriaId) == null)
             {
