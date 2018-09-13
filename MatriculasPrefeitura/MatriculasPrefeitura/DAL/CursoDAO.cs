@@ -9,7 +9,7 @@ namespace MatriculasPrefeitura.DAL
 {
     public class CursoDAO
     {
-        private static Context context = SingletonContext.GetIntance();
+        private static Context context = SingletonContext.GetInstance();
 
         public static List<Curso> RetornarCursos()
         {

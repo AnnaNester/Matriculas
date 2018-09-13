@@ -1,0 +1,3 @@
+C:\Users\Mirella\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.csprojResolveAssemblyReference.cache
+C:\Users\Mirella\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.dll
+C:\Users\Mirella\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.pdb

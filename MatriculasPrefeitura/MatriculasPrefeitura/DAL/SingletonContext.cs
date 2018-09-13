@@ -12,7 +12,7 @@ namespace MatriculasPrefeitura.DAL
 
         private SingletonContext() { }
 
-        public static Context GetIntance()
+        public static Context GetInstance()
         {
             if (context == null)
             {

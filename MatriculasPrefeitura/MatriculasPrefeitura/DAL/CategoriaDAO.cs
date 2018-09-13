@@ -10,7 +10,7 @@ namespace MatriculasPrefeitura.DAL
 {
     public class CategoriaDAO
     {
-        private static Context context = SingletonContext.GetIntance();
+        private static Context context = SingletonContext.GetInstance();
 
         public static List<CategoriaCurso> RetornarCategoria()
         {
