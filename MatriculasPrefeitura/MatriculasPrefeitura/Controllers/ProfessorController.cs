@@ -57,7 +57,6 @@ namespace MatriculasPrefeitura.Controllers
             professorOriginal.CursoLeciona = professorAlterado.CursoLeciona;
             professorOriginal.FotoProfessor = professorAlterado.FotoProfessor;
             professorOriginal.EnderecoProfessor = professorAlterado.EnderecoProfessor;
-            professorOriginal.SenhaProfessor = professorAlterado.SenhaProfessor;
 
 
             if (ModelState.IsValid)

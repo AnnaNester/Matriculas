@@ -32,13 +32,5 @@ namespace MatriculasOsorio.Models
         [Display(Name = "Endereço do Professor")]
         public string EnderecoProfessor { get; set; }
 
-        [Required(ErrorMessage = "Campo obrigatório")]
-        [Display(Name = "Senha do Professor")]
-        public string SenhaProfessor { get; set; }
-
-        [Compare("SenhaProfessor", ErrorMessage = "Os campos não coincidem!" )]
-        [Display(Name = "Confirmação da senha")]
-        [NotMapped]
-        public string ConfirmacaoSenha { get; set; }
     }
 }
