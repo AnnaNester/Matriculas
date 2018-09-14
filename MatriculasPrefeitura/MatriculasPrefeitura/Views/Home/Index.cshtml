@@ -1,0 +1,28 @@
+﻿@using MatriculasPrefeitura.Models
+
+@{
+    ViewBag.Title = "Index";
+    List<CategoriaCurso> categorias = ViewBag.Categorias;
+}
+
+<ul style="text-align:center; margin-top: 30px; margin-bottom: 30px" class="nav nav-tabs">
+    @foreach (CategoriaCurso cat in categorias)
+    {
+        <li class="nav-item">
+            @Html.ActionLink(cat.NomeCategoria, "Index", "Home", new { id = cat.CategoriaId }, new { @class = "nav-link" })
+
+        </li>
+    }
+</ul>
+
+<div class="row" style="margin-top:30px">
+    @foreach (var curso in Model)
+    {
+        <div class="col-sm-3" style="text-align:center; margin-bottom:30px">
+            <img class="img-thumbnail" src="~/Images/@curso.FotoCurso" style="width:200px;height:150px;margin-bottom:15px" />
+            @Html.ActionLink(curso.NomeCurso, "DetalheCurso", "Home", new { id = curso.CursoId }, null)
+
+        </div>
+    }
+</div>
+

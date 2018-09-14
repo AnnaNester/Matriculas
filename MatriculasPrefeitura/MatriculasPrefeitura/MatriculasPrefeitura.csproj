@@ -45,11 +45,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -177,6 +177,10 @@
     <Compile Include="Migrations\201809141220353_AlterTableCurso.Designer.cs">
       <DependentUpon>201809141220353_AlterTableCurso.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809141236222_aaa.cs" />
+    <Compile Include="Migrations\201809141236222_aaa.Designer.cs">
+      <DependentUpon>201809141236222_aaa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluno.cs" />
     <Compile Include="Models\CategoriaCurso.cs" />
@@ -196,12 +200,24 @@
     </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Usuarios\Create.cshtml" />
-    <Content Include="Views\Usuarios\Delete.cshtml" />
-    <Content Include="Views\Usuarios\Details.cshtml" />
-    <Content Include="Views\Usuarios\Edit.cshtml" />
     <Content Include="Views\Usuarios\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Aluno\CadastrarAluno.cshtml" />
+    <Content Include="Views\Aluno\EditarAluno.cshtml" />
+    <Content Include="Views\Aluno\Index.cshtml" />
+    <Content Include="Views\Categoria\Index.cshtml" />
+    <Content Include="Views\Categoria\CadastrarCategoria.cshtml" />
+    <Content Include="Views\Categoria\EditarCategoria.cshtml" />
+    <Content Include="Views\Curso\Index.cshtml" />
+    <Content Include="Views\Curso\CadastrarCurso.cshtml" />
+    <Content Include="Views\Curso\EditarCurso.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Matricula\Index.cshtml" />
+    <Content Include="Views\Professor\Index.cshtml" />
+    <Content Include="Views\Professor\CadastrarProfessor.cshtml" />
+    <Content Include="Views\Professor\EditarProfessor.cshtml" />
+    <Content Include="Views\Usuarios\CadastrarUsuario.cshtml" />
+    <Content Include="Views\Usuarios\EditarUsuario.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -212,13 +228,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\" />
-    <Folder Include="Views\Aluno\" />
-    <Folder Include="Views\Categoria\" />
-    <Folder Include="Views\Curso\" />
-    <Folder Include="Views\Home\" />
-    <Folder Include="Views\Matricula\" />
-    <Folder Include="Views\Professor\" />
-    <Folder Include="Views\Usuario\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201809141124524_AddTableUsuario.resx">
@@ -229,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809141220353_AlterTableCurso.resx">
       <DependentUpon>201809141220353_AlterTableCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809141236222_aaa.resx">
+      <DependentUpon>201809141236222_aaa.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

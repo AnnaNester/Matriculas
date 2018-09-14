@@ -55,3 +55,4 @@ C:\Users\Aluno\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura
 C:\Users\Aluno\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.csproj.GenerateResource.Cache
 C:\Users\Aluno\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.ControllerViewUsuario.resources
 C:\Users\Aluno\source\repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.AlterTableCurso.resources
+C:\Users\Aluno\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.aaa.resources
