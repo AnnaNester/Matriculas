@@ -6,6 +6,9 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Newtonsoft.Json;
+using System.Net;
+using System.Text;
 
 namespace MatriculasPrefeitura.Controllers
 {
@@ -82,6 +85,32 @@ namespace MatriculasPrefeitura.Controllers
         {
             ProfessorDAO.ExcluirProfessor(id);
             return RedirectToAction("Index", "Professor");
+        }
+
+        [HttpPost]
+        public ActionResult PesquisarCEP(Professor professor)
+        {
+            try
+            {
+                string url = "https://viacep.com.br/ws/" + professor.EnderecoProfessor + "/json/";
+
+                WebClient client = new WebClient();
+                string json = client.DownloadString(url);
+                // Converter string pra UTF-8
+                byte[] bytes = Encoding.Default.GetBytes(json);
+                json = Encoding.UTF8.GetString(bytes);
+                // Converter json para objeto
+                professor = JsonConvert.DeserializeObject<Professor>(json);
+
+                // Passar informação para qualquer action do controller
+                TempData["Professor"] = professor;
+            }
+            catch (Exception)
+            {
+                TempData["Mensagem"] = "CEP Inválido!";
+            }
+
+            return RedirectToAction("CadastrarProfessor", "Professor");
         }
     }
 }
