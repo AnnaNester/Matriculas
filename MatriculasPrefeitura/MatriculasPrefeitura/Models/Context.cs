@@ -14,5 +14,7 @@ namespace MatriculasOsorio.Models
         public DbSet<Aluno> Alunos { get; set; }
 
         public DbSet<CategoriaCurso> Categorias { get; set; }
+
+        public DbSet<Usuario> Usuarios { get; set; }
     }
 }
