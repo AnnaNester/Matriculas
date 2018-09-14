@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace MatriculasOsorio.Models
+namespace MatriculasPrefeitura.Models
 {
     [Table("Professores")]
     public class Professor

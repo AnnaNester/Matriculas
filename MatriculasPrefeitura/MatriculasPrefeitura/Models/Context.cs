@@ -1,7 +1,7 @@
 ﻿using MatriculasPrefeitura.Models;
 using System.Data.Entity;
 
-namespace MatriculasOsorio.Models
+namespace MatriculasPrefeitura.Models
 {
     public class Context : DbContext
     {

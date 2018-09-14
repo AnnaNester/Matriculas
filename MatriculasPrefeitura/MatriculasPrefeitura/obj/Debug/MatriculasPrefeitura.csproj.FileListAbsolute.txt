@@ -48,7 +48,6 @@ C:\Users\Aluno\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura
 C:\Users\Aluno\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\bin\System.Web.Webpages.Razor.xml
 C:\Users\Aluno\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\bin\System.Web.Helpers.xml
 C:\Users\Aluno\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\bin\System.Web.Mvc.xml
-C:\Users\Aluno\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.csprojResolveAssemblyReference.cache
 C:\Users\Aluno\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.dll
 C:\Users\Aluno\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.pdb
 C:\Users\Aluno\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.AddTableUsuario.resources
