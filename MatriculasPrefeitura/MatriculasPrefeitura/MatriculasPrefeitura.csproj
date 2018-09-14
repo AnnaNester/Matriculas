@@ -173,6 +173,10 @@
     <Compile Include="Migrations\201809141130284_ControllerViewUsuario.Designer.cs">
       <DependentUpon>201809141130284_ControllerViewUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809141220353_AlterTableCurso.cs" />
+    <Compile Include="Migrations\201809141220353_AlterTableCurso.Designer.cs">
+      <DependentUpon>201809141220353_AlterTableCurso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluno.cs" />
     <Compile Include="Models\CategoriaCurso.cs" />
@@ -222,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809141130284_ControllerViewUsuario.resx">
       <DependentUpon>201809141130284_ControllerViewUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809141220353_AlterTableCurso.resx">
+      <DependentUpon>201809141220353_AlterTableCurso.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

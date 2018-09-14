@@ -37,5 +37,8 @@ namespace MatriculasOsorio.Models
 
         [Required(ErrorMessage = "Campo obrigatório")]
         public CategoriaCurso CategoriaCurso { get; set; }
+
+        [Display(Name = "Imagem do curso")]
+        public string FotoCurso { get; set; }
     }
 }
