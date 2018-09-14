@@ -5,14 +5,14 @@ namespace MatriculasPrefeitura.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<MatriculasOsorio.Models.Context>
+    internal sealed class Configuration : DbMigrationsConfiguration<MatriculasPrefeitura.Models.Context>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(MatriculasOsorio.Models.Context context)
+        protected override void Seed(MatriculasPrefeitura.Models.Context context)
         {
             //  This method will be called after migrating to the latest version.
 
