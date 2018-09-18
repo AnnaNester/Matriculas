@@ -16,5 +16,7 @@ namespace MatriculasPrefeitura.Models
         public DbSet<CategoriaCurso> Categorias { get; set; }
 
         public DbSet<Usuario> Usuarios { get; set; }
+
+        public DbSet<Matricula> Matriculas { get; set; }
     }
 }
