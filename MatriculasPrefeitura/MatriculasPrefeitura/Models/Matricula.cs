@@ -1,5 +1,4 @@
-﻿using MatriculasOsorio.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -8,14 +7,16 @@ using System.Web;
 
 namespace MatriculasPrefeitura.Models
 {
-    [Table("Matriculas")]
+    [Table("Matricula")]
     public class Matricula
     {
         [Key]
-        public int MatriculaId { get; set; }
+        public int numMatricula { get; set; }
 
-        public Aluno Aluno { get; set; }
+        public Curso CursoMatriculado { get; set; }
 
-        public Curso Curso { get; set; }
+        public Aluno AlunoMatriculado { get; set; }
+
+        public DateTime DataMatricula { get; set; }
     }
 }
