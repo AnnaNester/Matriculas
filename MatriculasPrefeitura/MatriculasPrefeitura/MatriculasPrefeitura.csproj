@@ -234,6 +234,7 @@
     <Content Include="Views\Usuarios\CadastrarUsuario.cshtml" />
     <Content Include="Views\Usuarios\EditarUsuario.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\CursoDetalhe.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
