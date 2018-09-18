@@ -1,4 +1,5 @@
 ﻿using MatriculasPrefeitura.DAL;
+using MatriculasPrefeitura.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,17 @@ namespace MatriculasPrefeitura.Controllers
                 return View(CursoDAO.RetornarCursos());
             }
             return View(CursoDAO.BuscarCursoPorCategoria(id));
+        }
+
+        // CRIAR MÉTODO BUSCAR ALUNO POR CPF
+        public ActionResult MatricularAluno(int id)
+        {
+            Aluno alu = AlunoDAO.BuscarAlunoPorId(id);
+            
+
+
+            AlunoDAO.MatricularAluno(alu);
+            return View();
         }
     }
 }

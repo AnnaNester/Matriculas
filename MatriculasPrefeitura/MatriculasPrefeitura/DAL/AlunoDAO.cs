@@ -43,6 +43,13 @@ namespace MatriculasPrefeitura.DAL
             return false;
         }
 
-        
+        // MÉTODO MATRICULA !ALTERAR!
+        public static void MatricularAluno(Aluno aluno)
+        {
+            context.Alunos.Add(aluno);
+            context.SaveChanges();
+        }
+
+        // CRIAR BUSCARALUNOPORCPF
     }
 }

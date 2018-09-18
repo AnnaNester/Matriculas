@@ -28,13 +28,5 @@ namespace MatriculasPrefeitura.Models
         [Display(Name = "Endereço do Aluno")]
         public string EnderecoAluno { get; set; }
 
-        [Required(ErrorMessage = "Campo obrigatório")]
-        [Display(Name = "Senha do Aluno")]
-        public string SenhaAluno { get; set; }
-
-        [Compare("SenhaAluno", ErrorMessage = "Os campos não coincidem!")]
-        [Display(Name = "Confirmação da senha")]
-        [NotMapped]
-        public string ConfirmacaoAluno { get; set; }
     }
 }
