@@ -60,7 +60,6 @@ namespace MatriculasPrefeitura.Controllers
             alunoOriginal.CursoMatriculado = alunoAlterado.CursoMatriculado;
             alunoOriginal.FotoAluno = alunoAlterado.FotoAluno;
             alunoOriginal.EnderecoAluno = alunoAlterado.EnderecoAluno;
-            alunoOriginal.SenhaAluno = alunoAlterado.SenhaAluno; 
             
 
             if (ModelState.IsValid)

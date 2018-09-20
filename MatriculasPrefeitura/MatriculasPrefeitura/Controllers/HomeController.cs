@@ -21,14 +21,17 @@ namespace MatriculasPrefeitura.Controllers
             return View(CursoDAO.BuscarCursoPorCategoria(id));
         }
 
-        // CRIAR MÉTODO BUSCAR ALUNO POR CPF
-        public ActionResult MatricularAluno(int id)
+        public ActionResult MatricularAluno(Aluno aluno)
         {
-            Aluno alu = AlunoDAO.BuscarAlunoPorId(id);
-            
+            if(AlunoDAO.BuscarAlunoPorCPF(aluno) == null)
+            {
+                AlunoDAO.CadastrarAluno(aluno);
+            }
+            else
+            {
+                AlunoDAO.MatricularAluno(aluno);
+            }
 
-
-            AlunoDAO.MatricularAluno(alu);
             return View();
         }
     }

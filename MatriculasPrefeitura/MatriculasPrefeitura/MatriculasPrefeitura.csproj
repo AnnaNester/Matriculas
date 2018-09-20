@@ -197,6 +197,10 @@
     <Compile Include="Migrations\201809141236222_aaa.Designer.cs">
       <DependentUpon>201809141236222_aaa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809201556225_Matricular.cs" />
+    <Compile Include="Migrations\201809201556225_Matricular.Designer.cs">
+      <DependentUpon>201809201556225_Matricular.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluno.cs" />
     <Compile Include="Models\CategoriaCurso.cs" />
@@ -258,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809141236222_aaa.resx">
       <DependentUpon>201809141236222_aaa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809201556225_Matricular.resx">
+      <DependentUpon>201809201556225_Matricular.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
