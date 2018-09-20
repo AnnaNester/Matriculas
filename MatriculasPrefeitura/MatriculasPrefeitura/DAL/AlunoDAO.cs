@@ -50,6 +50,11 @@ namespace MatriculasPrefeitura.DAL
             context.SaveChanges();
         }
 
-        // CRIAR BUSCARALUNOPORCPF
+        public static Aluno BuscarAlunoPorCPF(Aluno aluno)
+        {
+            return context.Alunos.FirstOrDefault(x => x.CPFAluno.Equals(aluno.CPFAluno));
+        }
+
+
     }
 }
