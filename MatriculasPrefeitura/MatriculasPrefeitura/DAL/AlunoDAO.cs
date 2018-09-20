@@ -43,10 +43,15 @@ namespace MatriculasPrefeitura.DAL
             return false;
         }
 
-        // MÉTODO MATRICULA !ALTERAR!
         public static void MatricularAluno(Aluno aluno)
         {
-            context.Alunos.Add(aluno);
+            Matricula matricula = new Matricula();
+
+            matricula.AlunoMatriculado = aluno;
+            matricula.CursoMatriculado = aluno.CursoMatriculado;
+            matricula.DataMatricula = DateTime.Now;
+
+            context.Matriculas.Add(matricula);
             context.SaveChanges();
         }
 
