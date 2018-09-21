@@ -30,7 +30,7 @@
             <td>@curso.ProfessorCurso</td>
             <td>@curso.QtdeVagas</td>
             <td>@curso.DataInicio</td>
-            <td>@Html.ActionLink("Alterar", "AlterarCurso", "Curso", new { id = curso.CursoId }, new { @class = "btn btn-info" })</td>
+            <td>@Html.ActionLink("Alterar", "EditarCurso", "Curso", new { id = curso.CursoId }, new { @class = "btn btn-info" })</td>
             <td>@Html.ActionLink("Remover", "RemoverCurso", "Curso", new { id = curso.CursoId }, new { @class = "btn btn-danger" })</td>
         </tr>
         }

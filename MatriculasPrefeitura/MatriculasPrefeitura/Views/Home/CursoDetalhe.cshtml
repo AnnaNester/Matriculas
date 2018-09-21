@@ -23,9 +23,6 @@
             <br />
             @Model.DescricaoCurso<br />
             <b>Categoria: </b>@Model.CategoriaCurso.NomeCategoria<br />
-            @Html.ActionLink("Adicionar", "AdicionarAoCarrinho",
-                "Home", new { id = Model.CursoId },
-                new { @class = "btn btn-success" })
         </td>
     </tr>
 </table>

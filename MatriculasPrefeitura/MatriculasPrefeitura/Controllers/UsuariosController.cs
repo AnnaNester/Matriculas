@@ -22,7 +22,7 @@ namespace MatriculasPrefeitura.Controllers
         }
 
        
-        public ActionResult Create()
+        public ActionResult CadastrarUsuario()
         {
             if (TempData["Mensagem"] != null)
             {
@@ -33,13 +33,13 @@ namespace MatriculasPrefeitura.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Usuario usuario)
+        public ActionResult CadastrarUsuario(Usuario usuario)
         {
             if (ModelState.IsValid)
             {
                 if (UsuarioDAO.CadastrarUsuario(usuario))
                 {
-                    return RedirectToAction("Index", "Usuario");
+                    return RedirectToAction("Index", "Usuarios");
                 }
                 ModelState.AddModelError("", "Esse usuário já existe!");
                 return View(usuario);

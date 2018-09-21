@@ -21,6 +21,11 @@ namespace MatriculasPrefeitura.Controllers
             return View(CursoDAO.BuscarCursoPorCategoria(id));
         }
 
+        public ActionResult CursoDetalhe(int id)
+        {
+            return View(CursoDAO.BuscarCursoPorId(id));
+        }
+
         public ActionResult MatricularAluno(Aluno aluno)
         {
             if(AlunoDAO.BuscarAlunoPorCPF(aluno) == null)
