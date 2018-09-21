@@ -6,7 +6,7 @@
 
 <h3>CadastrarCurso</h3>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("CadastrarCurso", "Curso", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     

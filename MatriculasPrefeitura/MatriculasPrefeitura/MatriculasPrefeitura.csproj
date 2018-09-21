@@ -208,6 +208,10 @@
     <Compile Include="Migrations\201809211316502_ishe.Designer.cs">
       <DependentUpon>201809211316502_ishe.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809211419517_AlterTable.cs" />
+    <Compile Include="Migrations\201809211419517_AlterTable.Designer.cs">
+      <DependentUpon>201809211419517_AlterTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluno.cs" />
     <Compile Include="Models\CategoriaCurso.cs" />
@@ -274,6 +278,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809211316502_ishe.resx">
       <DependentUpon>201809211316502_ishe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809211419517_AlterTable.resx">
+      <DependentUpon>201809211419517_AlterTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

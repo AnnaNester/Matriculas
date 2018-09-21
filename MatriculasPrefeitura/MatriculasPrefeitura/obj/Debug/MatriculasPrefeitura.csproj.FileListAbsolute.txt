@@ -184,3 +184,13 @@ C:\Users\Aluno\Source\Repos\Matriculas2\MatriculasPrefeitura\MatriculasPrefeitur
 C:\Users\Aluno\Source\Repos\Matriculas2\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.pdb
 C:\Users\Aluno\Source\Repos\Matriculas2\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.Endereco.resources
 C:\Users\Aluno\Source\Repos\Matriculas2\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.ishe.resources
+C:\Users\Aluno\source\repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\bin\System.Net.Http.Formatting.dll
+C:\Users\Aluno\source\repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\bin\System.Web.Http.dll
+C:\Users\Aluno\source\repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\bin\System.Web.Http.WebHost.dll
+C:\Users\Aluno\source\repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\bin\System.Net.Http.Formatting.xml
+C:\Users\Aluno\source\repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\bin\System.Web.Http.xml
+C:\Users\Aluno\source\repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\bin\System.Web.Http.WebHost.xml
+C:\Users\Aluno\source\repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.Matricular.resources
+C:\Users\Aluno\source\repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.Endereco.resources
+C:\Users\Aluno\source\repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.ishe.resources
+C:\Users\Aluno\source\repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.AlterTable.resources
