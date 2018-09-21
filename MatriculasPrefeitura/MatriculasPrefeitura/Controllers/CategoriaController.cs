@@ -8,7 +8,6 @@ using System.Web.Mvc;
 
 namespace MatriculasPrefeitura.Controllers
 {
-    [Authorize]
     public class CategoriaController : Controller
     {
         public ActionResult ListarCategoria ()

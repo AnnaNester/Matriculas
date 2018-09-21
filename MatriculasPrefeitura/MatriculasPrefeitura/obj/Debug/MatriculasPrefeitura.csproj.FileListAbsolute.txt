@@ -174,7 +174,6 @@ C:\Users\Aluno\Source\Repos\Matriculas2\MatriculasPrefeitura\MatriculasPrefeitur
 C:\Users\Aluno\Source\Repos\Matriculas2\MatriculasPrefeitura\MatriculasPrefeitura\bin\System.Web.Webpages.Razor.xml
 C:\Users\Aluno\Source\Repos\Matriculas2\MatriculasPrefeitura\MatriculasPrefeitura\bin\System.Web.Helpers.xml
 C:\Users\Aluno\Source\Repos\Matriculas2\MatriculasPrefeitura\MatriculasPrefeitura\bin\System.Web.Mvc.xml
-C:\Users\Aluno\Source\Repos\Matriculas2\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.csprojResolveAssemblyReference.cache
 C:\Users\Aluno\Source\Repos\Matriculas2\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.AddTableUsuario.resources
 C:\Users\Aluno\Source\Repos\Matriculas2\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.ControllerViewUsuario.resources
 C:\Users\Aluno\Source\Repos\Matriculas2\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.AlterTableCurso.resources
@@ -184,3 +183,4 @@ C:\Users\Aluno\Source\Repos\Matriculas2\MatriculasPrefeitura\MatriculasPrefeitur
 C:\Users\Aluno\Source\Repos\Matriculas2\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.dll
 C:\Users\Aluno\Source\Repos\Matriculas2\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.pdb
 C:\Users\Aluno\Source\Repos\Matriculas2\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.Endereco.resources
+C:\Users\Aluno\Source\Repos\Matriculas2\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.ishe.resources

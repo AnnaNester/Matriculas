@@ -14,22 +14,8 @@
 <body>
 
     <nav class="navbar navbar-dark bg-dark">
-        @Html.ActionLink("Prefeitura", "Index", "Home", null, new { @class = "navbar-brand" })
-        <ul class="navbar-nav ml-auto">
-            @if (!Request.IsAuthenticated)
-            {
-                <li class="nav-item active" style="margin-left:10px">
-                    @Html.ActionLink("Login", "Login", "Usuarios", null, new { @class = "nav-link" })
-                </li>
-            }
-            else
-            {
-                <li class="nav-item active" style="margin-left:10px">
-                    @Html.ActionLink("Logout", "Logout", "Usuarios", null, new { @class = "nav-link" })
-                </li>
-            }
-
-        </ul>
+        @Html.ActionLink("Cursos Prefeitura", "Index", "Home", null, new { @class = "navbar-brand" })
+        
     </nav>
 
 

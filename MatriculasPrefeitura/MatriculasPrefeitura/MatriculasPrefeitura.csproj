@@ -149,6 +149,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="Scripts\jquery-1.10.2-vsdoc.js" />
+    <Content Include="Images\semImagem.jpeg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -170,14 +171,12 @@
     <Compile Include="Controllers\CursoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProfessorController.cs" />
-    <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="DAL\AlunoDAO.cs" />
     <Compile Include="DAL\CategoriaDAO.cs" />
     <Compile Include="DAL\CursoDAO.cs" />
     <Compile Include="DAL\MatriculaDAO.cs" />
     <Compile Include="DAL\ProfessorDAO.cs" />
     <Compile Include="DAL\SingletonContext.cs" />
-    <Compile Include="DAL\UsuarioDAO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -205,6 +204,10 @@
     <Compile Include="Migrations\201809211254401_Endereco.Designer.cs">
       <DependentUpon>201809211254401_Endereco.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809211316502_ishe.cs" />
+    <Compile Include="Migrations\201809211316502_ishe.Designer.cs">
+      <DependentUpon>201809211316502_ishe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluno.cs" />
     <Compile Include="Models\CategoriaCurso.cs" />
@@ -213,7 +216,6 @@
     <Compile Include="Models\Endereco.cs" />
     <Compile Include="Models\Matricula.cs" />
     <Compile Include="Models\Professor.cs" />
-    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\Sessao.cs" />
   </ItemGroup>
@@ -225,7 +227,6 @@
     </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Usuarios\Login.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Aluno\CadastrarAluno.cshtml" />
     <Content Include="Views\Aluno\EditarAluno.cshtml" />
@@ -240,11 +241,8 @@
     <Content Include="Views\Professor\Index.cshtml" />
     <Content Include="Views\Professor\CadastrarProfessor.cshtml" />
     <Content Include="Views\Professor\EditarProfessor.cshtml" />
-    <Content Include="Views\Usuarios\CadastrarUsuario.cshtml" />
-    <Content Include="Views\Usuarios\EditarUsuario.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\CursoDetalhe.cshtml" />
-    <Content Include="Views\Usuarios\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -254,7 +252,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201809141124524_AddTableUsuario.resx">
@@ -274,6 +271,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809211254401_Endereco.resx">
       <DependentUpon>201809211254401_Endereco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809211316502_ishe.resx">
+      <DependentUpon>201809211316502_ishe.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -20,7 +20,12 @@ namespace MatriculasPrefeitura.Controllers
             return View();
         }
 
-        // [HttpPost]
+        public ActionResult CadastrarAluno()
+        { 
+            return View();
+        }
+
+        [HttpPost]
         public ActionResult CadastrarAluno(Aluno aluno, HttpPostedFileBase fupImagem)
         {
             if (ModelState.IsValid)
@@ -34,9 +39,9 @@ namespace MatriculasPrefeitura.Controllers
                 }
                 else
                 {
-                    aluno.FotoAluno = "semImagem.jpg"; // ENCONTRAR FOTO SEM NADA PRA COLOCAR AQUI
+                    aluno.FotoAluno = "semImagem.jpeg";
                 }
-
+                AlunoDAO.CadastrarAluno(aluno);
                 return View(aluno);
             }
             else

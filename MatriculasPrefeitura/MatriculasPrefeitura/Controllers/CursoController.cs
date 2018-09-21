@@ -12,7 +12,6 @@ using Newtonsoft.Json;
 
 namespace MatriculasPrefeitura.Controllers
 {
-    [Authorize]
     public class CursoController : Controller
     {
         public ActionResult ListarCursos()

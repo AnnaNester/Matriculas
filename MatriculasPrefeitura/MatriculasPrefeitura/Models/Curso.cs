@@ -33,7 +33,7 @@ namespace MatriculasPrefeitura.Models
         [Required(ErrorMessage = "Campo obrigatório")]
         public string DescricaoCurso { get; set; }
 
-        [Display(Name = "Imício do Curso")]
+        [Display(Name = "Início do Curso")]
         public DateTime DataInicio { get; set; }
 
         [Required(ErrorMessage = "Campo obrigatório")]

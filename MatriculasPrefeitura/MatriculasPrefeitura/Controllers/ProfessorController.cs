@@ -36,6 +36,7 @@ namespace MatriculasPrefeitura.Controllers
                     professor.FotoProfessor = "semImagem.jpg"; // ENCONTRAR FOTO SEM NADA PRA COLOCAR AQUI
                 }
 
+                ProfessorDAO.CadastrarProfessor(professor);
                 return View(professor);
             }
             else
