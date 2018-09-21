@@ -1,12 +1,16 @@
 ﻿@using MatriculasPrefeitura.Models
-
 @model List<Curso>
+
 @{
     DateTime data = ViewBag.Data;
 }
 
 <div>
-    <h2>Cursos</h2>
+    <h2>Gerenciamento de Cursos</h2>
+
+    
+     @Html.ActionLink("Cadastrar Novo Curso", "CadastrarCurso", "Curso", null, new { @class = "nav-link" })
+        
 
     <table class="table table-hover table-striped" style="margin-top:30px">
         <tr>

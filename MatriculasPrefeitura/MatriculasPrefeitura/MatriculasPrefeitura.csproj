@@ -201,11 +201,16 @@
     <Compile Include="Migrations\201809201556225_Matricular.Designer.cs">
       <DependentUpon>201809201556225_Matricular.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809211254401_Endereco.cs" />
+    <Compile Include="Migrations\201809211254401_Endereco.Designer.cs">
+      <DependentUpon>201809211254401_Endereco.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluno.cs" />
     <Compile Include="Models\CategoriaCurso.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\Curso.cs" />
+    <Compile Include="Models\Endereco.cs" />
     <Compile Include="Models\Matricula.cs" />
     <Compile Include="Models\Professor.cs" />
     <Compile Include="Models\Usuario.cs" />
@@ -266,6 +271,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809201556225_Matricular.resx">
       <DependentUpon>201809201556225_Matricular.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809211254401_Endereco.resx">
+      <DependentUpon>201809211254401_Endereco.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

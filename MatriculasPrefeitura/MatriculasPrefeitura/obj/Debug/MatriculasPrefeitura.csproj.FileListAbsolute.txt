@@ -183,3 +183,4 @@ C:\Users\Aluno\Source\Repos\Matriculas2\MatriculasPrefeitura\MatriculasPrefeitur
 C:\Users\Aluno\Source\Repos\Matriculas2\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.csproj.GenerateResource.Cache
 C:\Users\Aluno\Source\Repos\Matriculas2\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.dll
 C:\Users\Aluno\Source\Repos\Matriculas2\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.pdb
+C:\Users\Aluno\Source\Repos\Matriculas2\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.Endereco.resources
