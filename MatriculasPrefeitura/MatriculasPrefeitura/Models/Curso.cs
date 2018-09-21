@@ -33,6 +33,7 @@ namespace MatriculasPrefeitura.Models
         [Required(ErrorMessage = "Campo obrigatório")]
         public string DescricaoCurso { get; set; }
 
+        [Display(Name = "Imício do Curso")]
         public DateTime DataInicio { get; set; }
 
         [Required(ErrorMessage = "Campo obrigatório")]
@@ -40,5 +41,9 @@ namespace MatriculasPrefeitura.Models
 
         [Display(Name = "Imagem do curso")]
         public string FotoCurso { get; set; }
+
+        public string Latitude { get; set; }
+
+        public string Longitutde { get; set; }
     }
 }

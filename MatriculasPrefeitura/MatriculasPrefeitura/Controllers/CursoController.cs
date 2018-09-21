@@ -6,6 +6,9 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Net;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace MatriculasPrefeitura.Controllers
 {
@@ -31,7 +34,7 @@ namespace MatriculasPrefeitura.Controllers
         }
 
         [HttpPost]
-        public ActionResult CadastrarProduto(Curso curso, int? Categorias, HttpPostedFileBase fupImagem)
+        public ActionResult CadastrarCurso(Curso curso, int? Categorias, HttpPostedFileBase fupImagem)
         {
             ViewBag.Categorias = new SelectList(CategoriaDAO.RetornarCategoria(), "CategoriaId", "NomeCategoria");
             if (ModelState.IsValid)
@@ -114,6 +117,28 @@ namespace MatriculasPrefeitura.Controllers
         {
             CursoDAO.ExcluirCurso(id);
             return RedirectToAction("Index", "Curso");
+        }
+
+        [HttpPost]
+        public ActionResult LocalizacaoCurso(Curso curso)
+        {
+            try
+            {
+                string url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + curso.LocalCurso + "&key=AIzaSyCpbsdLaCvNpC0jObCLKvRSH8eFXwuZ5Yk";
+                WebClient client = new WebClient();
+                string json = client.DownloadString(url);
+                byte[] bytes = Encoding.Default.GetBytes(json);
+                json = Encoding.UTF8.GetString(bytes);
+                curso = JsonConvert.DeserializeObject<Curso>(json);
+
+                TempData["Curso"] = curso;
+            }
+            catch (Exception)
+            {
+                TempData["Mensagem"] = "Localização Inválida!";
+            }
+
+            return RedirectToAction("DetalhesCurso", "Curso");
         }
     }
 }
