@@ -31,13 +31,16 @@ namespace MatriculasPrefeitura.Controllers
         public ActionResult CadastrarCurso()
         {
             ViewBag.Categorias = new SelectList(CategoriaDAO.RetornarCategoria(), "CategoriaId", "NomeCategoria");
-            return View();
+            ViewBag.Professores = new SelectList(ProfessorDAO.RetornarProfessores(), "NumProfessor", "NomeProfessor");
+            return View((Curso)TempData["Curso"]);
         }
 
         [HttpPost]
-        public ActionResult CadastrarCurso(Curso curso, int? Categorias, HttpPostedFileBase fupImagem)
+        [ValidateAntiForgeryToken]
+        public ActionResult CadastrarCurso([Bind(Include = "CursoId, NomeCurso, DuracaoCurso, QtdeVagas, DescricaoCurso, Logradouro, Localidade, UF, Cep, Bairro")] Curso curso, int? Professores, int? Categorias, HttpPostedFileBase fupImagem)
         {
             ViewBag.Categorias = new SelectList(CategoriaDAO.RetornarCategoria(), "CategoriaId", "NomeCategoria");
+            ViewBag.Professores = new SelectList(ProfessorDAO.RetornarProfessores(), "NumProfessor", "NomeProfessor");
             if (ModelState.IsValid)
             {
                 if (Categorias != null)
@@ -123,6 +126,31 @@ namespace MatriculasPrefeitura.Controllers
         public ActionResult ListarPorCategoria(int categoria)
         {
             return ViewBag.Cursos = CategoriaDAO.BuscarCategoriaPorId(categoria);
+        }
+
+        public ActionResult PesquisarCEP(Curso curso)
+        {
+            try
+            {
+                string url = "https://viacep.com.br/ws/" + curso.LocalCurso.CEP + "/json/";
+
+                WebClient client = new WebClient();
+                string json = client.DownloadString(url);
+                // Converter string pra UTF-8
+                byte[] bytes = Encoding.Default.GetBytes(json);
+                json = Encoding.UTF8.GetString(bytes);
+                // Converter json para objeto
+                curso = JsonConvert.DeserializeObject<Curso>(json);
+
+                // Passar informação para qualquer action do controller
+                TempData["Curso"] = curso;
+            }
+            catch (Exception)
+            {
+                TempData["Mensagem"] = "CEP Inválido!";
+            }
+
+            return RedirectToAction("CadastrarCurso", "Curso");
         }
     }
 }

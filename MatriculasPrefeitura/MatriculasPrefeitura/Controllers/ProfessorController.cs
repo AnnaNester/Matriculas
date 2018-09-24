@@ -58,7 +58,6 @@ namespace MatriculasPrefeitura.Controllers
             professorOriginal.NomeProfessor = professorAlterado.NomeProfessor;
             professorOriginal.CPFProfessor = professorAlterado.CPFProfessor;
             professorOriginal.FormacaoProfessor = professorAlterado.FormacaoProfessor;
-            professorOriginal.CursoLeciona = professorAlterado.CursoLeciona;
             professorOriginal.FotoProfessor = professorAlterado.FotoProfessor;
             professorOriginal.EnderecoProfessor = professorAlterado.EnderecoProfessor;
 

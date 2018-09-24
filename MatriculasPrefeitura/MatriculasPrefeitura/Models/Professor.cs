@@ -22,15 +22,12 @@ namespace MatriculasPrefeitura.Models
         [Display(Name = "Formação do Professor")]
         public string FormacaoProfessor { get; set; }
 
-        [Display(Name = "Cursos lecionados pelo Professor")]
-        public List<Curso> CursoLeciona { get; set; }
-
         [Display(Name = "Foto do Professor")]
         public string FotoProfessor { get; set; }
 
         [Required(ErrorMessage = "Campo obrigatório")]
         [Display(Name = "Endereço do Professor")]
-        public string EnderecoProfessor { get; set; }
+        public Endereco EnderecoProfessor { get; set; }
 
     }
 }

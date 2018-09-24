@@ -184,6 +184,18 @@
     <Compile Include="Migrations\201809241252455_CreateTable.Designer.cs">
       <DependentUpon>201809241252455_CreateTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809241851215_AlterTableCurso.cs" />
+    <Compile Include="Migrations\201809241851215_AlterTableCurso.Designer.cs">
+      <DependentUpon>201809241851215_AlterTableCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809241938040_AlterTable.cs" />
+    <Compile Include="Migrations\201809241938040_AlterTable.Designer.cs">
+      <DependentUpon>201809241938040_AlterTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809241946584_AlterTable1.cs" />
+    <Compile Include="Migrations\201809241946584_AlterTable1.Designer.cs">
+      <DependentUpon>201809241946584_AlterTable1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluno.cs" />
     <Compile Include="Models\CategoriaCurso.cs" />
@@ -232,6 +244,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201809241252455_CreateTable.resx">
       <DependentUpon>201809241252455_CreateTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809241851215_AlterTableCurso.resx">
+      <DependentUpon>201809241851215_AlterTableCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809241938040_AlterTable.resx">
+      <DependentUpon>201809241938040_AlterTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809241946584_AlterTable1.resx">
+      <DependentUpon>201809241946584_AlterTable1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
