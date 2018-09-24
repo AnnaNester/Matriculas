@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MatriculasPrefeitura.Models
 {
+    [Table("Categoria")]
     public class CategoriaCurso
     {
         [Key]

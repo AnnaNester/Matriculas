@@ -22,10 +22,6 @@ namespace MatriculasPrefeitura.Models
         [Display(Name = "Local do Curso")]
         public string LocalCurso { get; set; }
 
-        [Display(Name = "Professor do Curso")]
-        [Required(ErrorMessage = "Campo obrigatório")]
-        public Professor ProfessorCurso { get; set; }
-
         [Display(Name = "Quantidade de vagas do Curso")]
         public int QtdeVagas { get; set; }
 
@@ -36,7 +32,8 @@ namespace MatriculasPrefeitura.Models
         [Display(Name = "Início do Curso")]
         public DateTime DataInicio { get; set; }
 
-        public CategoriaCurso CategoriaCurso { get; set; }
+        [Display(Name = "Categoria do Curso")]
+        public CategoriaCurso Categoria { get; set; }
 
         [Display(Name = "Imagem do curso")]
         public string FotoCurso { get; set; }

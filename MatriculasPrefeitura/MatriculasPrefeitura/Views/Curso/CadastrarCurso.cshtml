@@ -1,89 +1,67 @@
-﻿@model MatriculasPrefeitura.Models.Curso
-
-@{
-    ViewBag.Title = "CadastrarCurso";
-}
-
-<h3>CadastrarCurso</h3>
-
-@using (Html.BeginForm("CadastrarCurso", "Curso", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
-{
-    @Html.AntiForgeryToken()
-    
-<div class="form-horizontal">
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(model => model.NomeCurso, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.NomeCurso, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.NomeCurso, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.CategoriaCurso, new { @class = "control-label col-sm-2" })
-        <div class="control-label col-sm-5">
-            @Html.DropDownList("Categorias", null, " -- SELECIONE -- ", new { @class = "form-control" })<br>
-            @Html.ValidationMessageFor(model => model.CategoriaCurso, null, new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.DuracaoCurso, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.DuracaoCurso, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.DuracaoCurso, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.LocalCurso, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.LocalCurso, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.LocalCurso, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.QtdeVagas, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.QtdeVagas, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.QtdeVagas, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.DescricaoCurso, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.DescricaoCurso, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.DescricaoCurso, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.DataInicio, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.DataInicio, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.DataInicio, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.FotoCurso, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            <input type="file" name="fupImagem" class="form-control-file" />
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Cadastrar" class="btn btn-default" />
-        </div>
-    </div>
-</div>
+﻿@{
+    @model MatriculasPrefeitura.Models.Curso
 }
 
 <div>
-    @Html.ActionLink("Voltar ao Menu", "Index")
+
+    @using (Html.BeginForm("CadastrarCurso", "Curso", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+    {
+        <fieldset>
+            <legend>Cadastrar Curso</legend>
+            @Html.ValidationSummary(true, null, new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.NomeCurso, new { @class = "control-label col-sm-2" })
+                <div class="control-label col-sm-5">
+                    @Html.TextBoxFor(model => model.NomeCurso, new { @class = "form-control", @placeholder = "Nome do curso" })<br>
+                    @Html.ValidationMessageFor(model => model.NomeCurso, null, new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.DescricaoCurso, new { @class = "control-label col-sm-2" })
+                <div class="control-label col-sm-5">
+                    @Html.TextBoxFor(model => model.DescricaoCurso, new { @class = "form-control", @placeholder = "Descrição do curso" })<br>
+                    @Html.ValidationMessageFor(model => model.DescricaoCurso, null, new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.DuracaoCurso, new { @class = "control-label col-sm-2" })
+                <div class="control-label col-sm-5">
+                    @Html.TextBoxFor(model => model.DuracaoCurso, new { @class = "form-control", @placeholder = "Duração do curso" })<br>
+                    @Html.ValidationMessageFor(model => model.DuracaoCurso, null, new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Categoria, new { @class = "control-label col-sm-2" })
+                <div class="control-label col-sm-5">
+                    @Html.DropDownList("Categorias", null, " -- SELECIONE -- ", new { @class = "form-control" })<br>
+                    @Html.ValidationMessageFor(model => model.Categoria, null, new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.LocalCurso, new { @class = "control-label col-sm-2" })
+                <div class="control-label col-sm-5">
+                    @Html.TextBoxFor(model => model.LocalCurso, new { @class = "form-control", @placeholder = "Local do curso" })<br>
+                    @Html.ValidationMessageFor(model => model.LocalCurso, null, new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.QtdeVagas, new { @class = "control-label col-sm-2" })
+                <div class="control-label col-sm-5">
+                    @Html.TextBoxFor(model => model.QtdeVagas, new { @class = "form-control", @placeholder = "Quantidade de vagas do curso" })<br>
+                    @Html.ValidationMessageFor(model => model.QtdeVagas, null, new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.Label("Imagem do curso", new { @class = "control-label col-sm-2" })
+                <div class="control-label col-sm-5">
+                    <input type="file" name="fupImagem" class="form-control-file" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <input type="submit" value="Cadastrar" class="btn btn-primary" />
+                </div>
+            </div>
+        </fieldset>
+    }
 </div>

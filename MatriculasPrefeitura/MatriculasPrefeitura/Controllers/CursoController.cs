@@ -14,16 +14,18 @@ namespace MatriculasPrefeitura.Controllers
 {
     public class CursoController : Controller
     {
-        public ActionResult ListarCursos()
+        public ActionResult ListarProduto()
         {
             CursoDAO.RetornarCursos();
             return View();
         }
 
-        // GET: Curso
+
+        // GET: Produto
         public ActionResult Index()
         {
-            return View();
+            ViewBag.Data = DateTime.Now;
+            return View(CursoDAO.RetornarCursos());
         }
 
         public ActionResult CadastrarCurso()
@@ -54,7 +56,7 @@ namespace MatriculasPrefeitura.Controllers
                         curso.FotoCurso = "image (1).jpeg";
                     }
 
-                    curso.CategoriaCurso = CategoriaDAO.BuscarCategoriaPorId(Categorias);
+                    curso.Categoria = CategoriaDAO.BuscarCategoriaPorId(Categorias);
                     if (CursoDAO.CadastrarCurso(curso))
                     {
                         return RedirectToAction("Index", "Curso");
@@ -85,20 +87,20 @@ namespace MatriculasPrefeitura.Controllers
         [HttpPost]
         public ActionResult AlterarCurso(Curso cursoAlterado)
         {
-            ViewBag.Categorias = new SelectList(CategoriaDAO.RetornarCategoria(), "CategoriaId", "NomeCategoria");
             if (ModelState.IsValid)
             {
                 Curso cursoOriginal = CursoDAO.BuscarCursoPorId(cursoAlterado.CursoId);
                 cursoOriginal.NomeCurso = cursoAlterado.NomeCurso;
+                cursoOriginal.DescricaoCurso = cursoAlterado.DescricaoCurso;
                 cursoOriginal.DuracaoCurso = cursoAlterado.DuracaoCurso;
+                cursoOriginal.Categoria = cursoAlterado.Categoria;
                 cursoOriginal.LocalCurso = cursoAlterado.LocalCurso;
                 cursoOriginal.QtdeVagas = cursoAlterado.QtdeVagas;
-                cursoOriginal.DescricaoCurso = cursoAlterado.DescricaoCurso;
-                cursoOriginal.CategoriaCurso = cursoAlterado.CategoriaCurso;
+
 
                 if (CursoDAO.AlterarCurso(cursoAlterado))
                 {
-                    return RedirectToAction("Index", "Produto");
+                    return RedirectToAction("Index", "Curso");
                 }
                 else
                 {
@@ -112,32 +114,15 @@ namespace MatriculasPrefeitura.Controllers
             }
         }
 
-        public ActionResult ExcluirCurso(int id)
+        public ActionResult RemoverCurso(int id)
         {
-            CursoDAO.ExcluirCurso(id);
+            CursoDAO.RemoverCurso(id);
             return RedirectToAction("Index", "Curso");
         }
 
-        [HttpPost]
-        public ActionResult LocalizacaoCurso(Curso curso)
+        public ActionResult ListarPorCategoria(int categoria)
         {
-            try
-            {
-                string url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + curso.LocalCurso + "&key=AIzaSyCpbsdLaCvNpC0jObCLKvRSH8eFXwuZ5Yk";
-                WebClient client = new WebClient();
-                string json = client.DownloadString(url);
-                byte[] bytes = Encoding.Default.GetBytes(json);
-                json = Encoding.UTF8.GetString(bytes);
-                curso = JsonConvert.DeserializeObject<Curso>(json);
-
-                TempData["Curso"] = curso;
-            }
-            catch (Exception)
-            {
-                TempData["Mensagem"] = "Localização Inválida!";
-            }
-
-            return RedirectToAction("DetalhesCurso", "Curso");
+            return ViewBag.Cursos = CategoriaDAO.BuscarCategoriaPorId(categoria);
         }
     }
 }

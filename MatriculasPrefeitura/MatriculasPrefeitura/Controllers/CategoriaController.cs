@@ -10,16 +10,18 @@ namespace MatriculasPrefeitura.Controllers
 {
     public class CategoriaController : Controller
     {
-        public ActionResult ListarCategoria ()
+        public ActionResult ListarCategoria()
         {
             CategoriaDAO.RetornarCategoria();
             return View();
         }
 
-        // GET: Categoria
+
+        // GET: Produto
         public ActionResult Index()
         {
-            return View();
+            ViewBag.Data = DateTime.Now;
+            return View(CategoriaDAO.RetornarCategoria());
         }
 
         public ActionResult CadastrarCategoria()
@@ -30,17 +32,19 @@ namespace MatriculasPrefeitura.Controllers
         [HttpPost]
         public ActionResult CadastrarCategoria(CategoriaCurso categoria)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                if(CategoriaDAO.CadastrarCategoria(categoria))
+                if (CategoriaDAO.CadastrarCategoria(categoria))
                 {
                     return RedirectToAction("Index", "Categoria");
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Erro! Não pode ser cadastrado categoria de curso com o mesmo nome!");
+                    ModelState.AddModelError("", "Não é possível adicionar uma categoria com o mesmo nome!");
                     return View(categoria);
                 }
+
+
             }
             else
             {
@@ -50,7 +54,7 @@ namespace MatriculasPrefeitura.Controllers
 
         public ActionResult AlterarCategoria(int id)
         {
-            return View(CategoriaDAO.BuscarCategoriaPorId(id));
+            return View(CursoDAO.BuscarCursoPorId(id));
         }
 
         [HttpPost]
@@ -78,9 +82,9 @@ namespace MatriculasPrefeitura.Controllers
             }
         }
 
-        public ActionResult RemoverCategoria (int id)
+        public ActionResult RemoverCategoria(int id)
         {
-            CategoriaDAO.ExcluirCategoria(id);
+            CategoriaDAO.RemoverCategoria(id);
             return RedirectToAction("Index", "Categoria");
         }
     }

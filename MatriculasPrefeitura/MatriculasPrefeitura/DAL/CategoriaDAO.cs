@@ -15,9 +15,10 @@ namespace MatriculasPrefeitura.DAL
         {
             return context.Categorias.ToList();
         }
+
         public static bool CadastrarCategoria(CategoriaCurso categoria)
         {
-            if(BuscarCategoriaPorNome(categoria) == null)
+            if (BuscarCategoriaPorNome(categoria) == null)
             {
                 context.Categorias.Add(categoria);
                 context.SaveChanges();
@@ -26,9 +27,15 @@ namespace MatriculasPrefeitura.DAL
             return false;
         }
 
-        public static CategoriaCurso BuscarCategoriaPorNome(CategoriaCurso categoria)
+        public static CategoriaCurso BuscarCategoriaPorId(int? id)
         {
-            return context.Categorias.FirstOrDefault(x => x.NomeCategoria.Equals(categoria.NomeCategoria));
+            return context.Categorias.Find(id);
+        }
+
+        public static void RemoverCategoria(int id)
+        {
+            context.Categorias.Remove(BuscarCategoriaPorId(id));
+            context.SaveChanges();
         }
 
         public static bool AlterarCategoria(CategoriaCurso categoria)
@@ -42,15 +49,9 @@ namespace MatriculasPrefeitura.DAL
             return false;
         }
 
-        public static void ExcluirCategoria(int id)
+        public static CategoriaCurso BuscarCategoriaPorNome(CategoriaCurso categoria)
         {
-            context.Categorias.Remove(BuscarCategoriaPorId(id));
-            context.SaveChanges();
-        }
-
-        public static CategoriaCurso BuscarCategoriaPorId(int? id)
-        {
-            return context.Categorias.Find(id);
+            return context.Categorias.FirstOrDefault(x => x.NomeCategoria.Equals(categoria.NomeCategoria));
         }
     }
 }

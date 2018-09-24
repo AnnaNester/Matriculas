@@ -45,11 +45,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -180,37 +180,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201809141124524_AddTableUsuario.cs" />
-    <Compile Include="Migrations\201809141124524_AddTableUsuario.Designer.cs">
-      <DependentUpon>201809141124524_AddTableUsuario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809141130284_ControllerViewUsuario.cs" />
-    <Compile Include="Migrations\201809141130284_ControllerViewUsuario.Designer.cs">
-      <DependentUpon>201809141130284_ControllerViewUsuario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809141220353_AlterTableCurso.cs" />
-    <Compile Include="Migrations\201809141220353_AlterTableCurso.Designer.cs">
-      <DependentUpon>201809141220353_AlterTableCurso.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809141236222_aaa.cs" />
-    <Compile Include="Migrations\201809141236222_aaa.Designer.cs">
-      <DependentUpon>201809141236222_aaa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809201556225_Matricular.cs" />
-    <Compile Include="Migrations\201809201556225_Matricular.Designer.cs">
-      <DependentUpon>201809201556225_Matricular.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809211254401_Endereco.cs" />
-    <Compile Include="Migrations\201809211254401_Endereco.Designer.cs">
-      <DependentUpon>201809211254401_Endereco.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809211316502_ishe.cs" />
-    <Compile Include="Migrations\201809211316502_ishe.Designer.cs">
-      <DependentUpon>201809211316502_ishe.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809211419517_AlterTable.cs" />
-    <Compile Include="Migrations\201809211419517_AlterTable.Designer.cs">
-      <DependentUpon>201809211419517_AlterTable.cs</DependentUpon>
+    <Compile Include="Migrations\201809241252455_CreateTable.cs" />
+    <Compile Include="Migrations\201809241252455_CreateTable.Designer.cs">
+      <DependentUpon>201809241252455_CreateTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluno.cs" />
@@ -258,29 +230,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201809141124524_AddTableUsuario.resx">
-      <DependentUpon>201809141124524_AddTableUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809141130284_ControllerViewUsuario.resx">
-      <DependentUpon>201809141130284_ControllerViewUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809141220353_AlterTableCurso.resx">
-      <DependentUpon>201809141220353_AlterTableCurso.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809141236222_aaa.resx">
-      <DependentUpon>201809141236222_aaa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809201556225_Matricular.resx">
-      <DependentUpon>201809201556225_Matricular.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809211254401_Endereco.resx">
-      <DependentUpon>201809211254401_Endereco.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809211316502_ishe.resx">
-      <DependentUpon>201809211316502_ishe.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809211419517_AlterTable.resx">
-      <DependentUpon>201809211419517_AlterTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201809241252455_CreateTable.resx">
+      <DependentUpon>201809241252455_CreateTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
