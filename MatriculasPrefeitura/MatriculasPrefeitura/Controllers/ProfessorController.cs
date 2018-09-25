@@ -66,12 +66,13 @@ namespace MatriculasPrefeitura.Controllers
 
         }
 
-        public ActionResult AlterarProfessor(int id)
+        public ActionResult EditarProfessor(int id)
         {
             return View(ProfessorDAO.BuscarProfessorPorId(id));
         }
 
-        public ActionResult AlterarProfessor(Professor professorAlterado)
+        [HttpPost]
+        public ActionResult EditarProfessor(Professor professorAlterado)
         {
             Professor professorOriginal = ProfessorDAO.BuscarProfessorPorId(professorAlterado.NumProfessor);
 
@@ -106,7 +107,7 @@ namespace MatriculasPrefeitura.Controllers
         }
 
 
-        public ActionResult ExcluirProfesssor(int id)
+        public ActionResult ExcluirProfessor(int id)
         {
             ProfessorDAO.ExcluirProfessor(id);
             return RedirectToAction("Index", "Professor");

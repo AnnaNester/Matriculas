@@ -60,12 +60,13 @@ namespace MatriculasPrefeitura.Controllers
 
         }
 
-        public ActionResult AlterarAluno(int id)
+        public ActionResult EditarAluno(int id)
         {
             return View(AlunoDAO.BuscarAlunoPorId(id));
         }
 
-        public ActionResult AlterarAluno(Aluno alunoAlterado)
+        [HttpPost]
+        public ActionResult EditarAluno(Aluno alunoAlterado)
         {
             Aluno alunoOriginal = AlunoDAO.BuscarAlunoPorId(alunoAlterado.NumAluno);
 
