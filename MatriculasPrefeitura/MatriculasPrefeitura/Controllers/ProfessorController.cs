@@ -17,7 +17,7 @@ namespace MatriculasPrefeitura.Controllers
         // GET: Professor
         public ActionResult Index()
         {
-            return View();
+            return View(ProfessorDAO.RetornarProfessores());
         }
 
         public ActionResult CadastrarProfessor()

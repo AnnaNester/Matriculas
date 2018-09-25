@@ -1,4 +1,5 @@
-﻿
+﻿@model IEnumerable<MatriculasPrefeitura.Models.Aluno>
+
 @{
     ViewBag.Title = "Index";
 }
@@ -7,5 +8,22 @@
 
 <li class="nav-item">
     @Html.ActionLink("Cadastrar Aluno", "CadastrarAluno", "Aluno", null, new { @class = "nav-link" })
-    @Html.ActionLink("Editar Aluno", "CadastrarAluno", "Aluno", null, new { @class = "nav-link" })
 </li>
+
+<table class="table table-hover table-striped" style="margin-top:30px">
+    <tr>
+        <th>Nome</th>
+        <th>CPF</th>
+        <th>Alterar</th>
+        <th>Remover</th>
+    </tr>
+    @foreach (var aluno in Model)
+            {
+        <tr>
+            <td>@aluno.NomeAluno</td>
+            <td>@aluno.CPFAluno</td>
+            <td>@Html.ActionLink("Alterar", "EditarAluno", "Aluno", new { id = aluno.NumAluno }, new { @class = "btn btn-info" })</td>
+            <td>@Html.ActionLink("Remover", "ExcluirAluno", "Aluno", new { id = aluno.NumAluno }, new { @class = "btn btn-danger" })</td>
+        </tr>
+    }
+</table>

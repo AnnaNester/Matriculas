@@ -170,6 +170,7 @@
     <Compile Include="Controllers\CursoAPIController.cs" />
     <Compile Include="Controllers\CursoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MatriculaController.cs" />
     <Compile Include="Controllers\ProfessorController.cs" />
     <Compile Include="DAL\AlunoDAO.cs" />
     <Compile Include="DAL\CategoriaDAO.cs" />

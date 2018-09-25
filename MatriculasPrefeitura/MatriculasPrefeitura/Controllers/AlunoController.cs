@@ -17,7 +17,7 @@ namespace MatriculasPrefeitura.Controllers
         // GET: Aluno
         public ActionResult Index()
         {
-            return View();
+            return View(AlunoDAO.RetornarAlunos());
         }
 
         public ActionResult CadastrarAluno()

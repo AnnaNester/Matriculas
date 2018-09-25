@@ -1,4 +1,6 @@
-﻿
+﻿@using MatriculasPrefeitura.Models
+@model List<Professor>
+
 @{
     ViewBag.Title = "Index";
 }
@@ -7,5 +9,24 @@
 
 <li class="nav-item">
     @Html.ActionLink("Cadastrar Professor", "CadastrarProfessor", "Professor", null, new { @class = "nav-link" })
-    @Html.ActionLink("Editar Professor", "EditarProfessor", "Professor", null, new { @class = "nav-link" })
 </li>
+
+<table class="table table-hover table-striped" style="margin-top:30px">
+    <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>CPF</th>
+        <th>Alterar</th>
+        <th>Remover</th>
+    </tr>
+    @foreach (var professor in Model)
+            {
+        <tr>
+            <td>@professor.NumProfessor</td>
+            <td>@professor.NomeProfessor</td>
+            <td>@professor.CPFProfessor</td>
+            <td>@Html.ActionLink("Alterar", "EditarProfessor", "Professor", new { id = professor.NumProfessor }, new { @class = "btn btn-info" })</td>
+            <td>@Html.ActionLink("Remover", "ExcluirProfessor", "Professor", new { id = professor.NumProfessor }, new { @class = "btn btn-danger" })</td>
+        </tr>
+    }
+</table>

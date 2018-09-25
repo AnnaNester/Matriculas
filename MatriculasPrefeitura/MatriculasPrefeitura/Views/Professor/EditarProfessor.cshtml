@@ -1,63 +1,156 @@
-﻿@model MatriculasPrefeitura.Models.Professor
-
-@{
-    ViewBag.Title = "EditarProfessor";
-}
-
-<h2>EditarProfessor</h2>
-
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Professor</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.NumProfessor)
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.NomeProfessor, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.NomeProfessor, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.NomeProfessor, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.CPFProfessor, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CPFProfessor, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CPFProfessor, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.FormacaoProfessor, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.FormacaoProfessor, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.FormacaoProfessor, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.FotoProfessor, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.FotoProfessor, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.FotoProfessor, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Salvar" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
-}
+﻿@using MatriculasPrefeitura.Models
+@model Professor
 
 <div>
-    @Html.ActionLink("Voltar ao Menu", "Index")
+    @using (Html.BeginForm("EditarProfessor", "Professor", FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+        <fieldset>
+            <legend>Alterar Produto</legend>
+            @Html.ValidationSummary(true, null,
+                new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.NumProfessor)
+
+            <div class="form-group">
+                @Html.Label("Nome do professor",
+                    new { @class = "control-label col-sm-2" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.NomeProfessor,
+                        new
+                        {
+                            @class = "form-control",
+                            @placeholder = "Nome do professor"
+                        })
+                    @Html.ValidationMessageFor(model => model.NomeProfessor, null,
+                        new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("CPF do Professor",
+                    new { @class = "control-label col-sm-2" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.CPFProfessor,
+                        new
+                        {
+                            @class = "form-control",
+                            @placeholder = "CPF do Professor"
+                        })
+                    @Html.ValidationMessageFor(model => model.CPFProfessor, null,
+                        new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Formação do Professor",
+                    new { @class = "control-label col-sm-2" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.FormacaoProfessor,
+                        new
+                        {
+                            @class = "form-control",
+                            @placeholder = "Formação do Professor"
+                        })
+                    @Html.ValidationMessageFor(model => model.FormacaoProfessor, null,
+                        new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("CEP Professor",
+                    new { @class = "control-label col-sm-2" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.CEP,
+                        new
+                        {
+                            @class = "form-control",
+                            @placeholder = "CEP Professor"
+                        })
+                    @Html.ValidationMessageFor(model => model.CEP, null,
+                        new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Logradouro Professor",
+                    new { @class = "control-label col-sm-2" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.Logradouro,
+                        new
+                        {
+                            @class = "form-control",
+                            @placeholder = "Logradouro Professor"
+                        })
+                    @Html.ValidationMessageFor(model => model.Logradouro, null,
+                        new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Número Residência",
+                    new { @class = "control-label col-sm-2" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.Numero,
+                        new
+                        {
+                            @class = "form-control",
+                            @placeholder = "Número Residência"
+                        })
+                    @Html.ValidationMessageFor(model => model.Numero, null,
+                        new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Bairro do Professor",
+                    new { @class = "control-label col-sm-2" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.Bairro,
+                        new
+                        {
+                            @class = "form-control",
+                            @placeholder = "Bairro do Professor"
+                        })
+                    @Html.ValidationMessageFor(model => model.Bairro, null,
+                        new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Cidade do Professor",
+                    new { @class = "control-label col-sm-2" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.Localidade,
+                        new
+                        {
+                            @class = "form-control",
+                            @placeholder = "Cidade do Professor"
+                        })
+                    @Html.ValidationMessageFor(model => model.Localidade, null,
+                        new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Estado do Professor",
+                    new { @class = "control-label col-sm-2" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.UF,
+                        new
+                        {
+                            @class = "form-control",
+                            @placeholder = "Estado do Professor"
+                        })
+                    @Html.ValidationMessageFor(model => model.UF, null,
+                        new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <input type="submit" value="Salvar"
+                           class="btn btn-primary">
+                </div>
+            </div>
+        </fieldset>
+    }
 </div>

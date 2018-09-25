@@ -26,18 +26,6 @@ namespace MatriculasPrefeitura.Controllers
             return View(CursoDAO.BuscarCursoPorId(id));
         }
 
-        public ActionResult MatricularAluno(Aluno aluno)
-        {
-            if(AlunoDAO.BuscarAlunoPorCPF(aluno) == null)
-            {
-                AlunoDAO.CadastrarAluno(aluno);
-            }
-            else
-            {
-                AlunoDAO.MatricularAluno(aluno);
-            }
-
-            return View();
-        }
+        
     }
 }

@@ -53,10 +53,6 @@ C:\Users\Aluno\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura
 C:\Users\Aluno\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\bin\Newtonsoft.Json.dll
 C:\Users\Aluno\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\bin\Newtonsoft.Json.xml
 C:\Users\Aluno\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.csprojResolveAssemblyReference.cache
-C:\Users\Mirella\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.AddTableUsuario.resources
-C:\Users\Mirella\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.ControllerViewUsuario.resources
-C:\Users\Mirella\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.AlterTableCurso.resources
-C:\Users\Mirella\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.aaa.resources
 C:\Users\Mirella\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.csproj.GenerateResource.Cache
 C:\Users\Mirella\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\bin\ApplicationInsights.config
 C:\Users\Mirella\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\bin\roslyn\csc.exe
@@ -113,7 +109,6 @@ C:\Users\Mirella\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitu
 C:\Users\Mirella\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\bin\System.Web.Webpages.Razor.xml
 C:\Users\Mirella\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\bin\System.Web.Helpers.xml
 C:\Users\Mirella\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\bin\System.Web.Mvc.xml
-C:\Users\Mirella\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.Matricular.resources
 C:\Users\Aluno\Source\Repos\Matriculas2\MatriculasPrefeitura\MatriculasPrefeitura\bin\ApplicationInsights.config
 C:\Users\Aluno\Source\Repos\Matriculas2\MatriculasPrefeitura\MatriculasPrefeitura\bin\roslyn\csc.exe
 C:\Users\Aluno\Source\Repos\Matriculas2\MatriculasPrefeitura\MatriculasPrefeitura\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -311,3 +306,5 @@ C:\Users\Aluno\Source\Repos\Matriculas4\MatriculasPrefeitura\MatriculasPrefeitur
 C:\Users\anna\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.csprojAssemblyReference.cache
 C:\Users\anna\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.CreateDatabase.resources
 C:\Users\anna\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.popopopopo.resources
+C:\Users\Mirella\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.CreateDatabase.resources
+C:\Users\Mirella\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.popopopopo.resources
