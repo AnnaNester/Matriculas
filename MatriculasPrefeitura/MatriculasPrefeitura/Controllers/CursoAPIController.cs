@@ -9,110 +9,66 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using MatriculasPrefeitura.Models;
+using MatriculasPrefeitura.DAL;
 
 namespace MatriculasPrefeitura.Controllers
 {
+    [RoutePrefix("api/Curso")]
     public class CursoAPIController : ApiController
     {
         private Context db = new Context();
 
-        // GET: api/CursoAPI
-        public IQueryable<Curso> GetCursos()
+        [Route("Produtos")]
+        public List<Curso> GetCursos() 
         {
-            return db.Cursos;
+            return CursoDAO.RetornarCursos();
         }
 
-        // GET: api/CursoAPI/5
-        [ResponseType(typeof(Curso))]
-        public IHttpActionResult GetCurso(int id)
+        [Route("ProdutosPorCategoria/{categoriaId}")]
+        public List<Curso> GetCursosPorCategoria(int categoriaId) // mesmo nome que foi definido acima
         {
-            Curso curso = db.Cursos.Find(id);
-            if (curso == null)
+            return CursoDAO.BuscarCursoPorCategoria(categoriaId);
+        }
+
+        // GET: api/Produto/ProdutoPorId/5 exemplo
+        [Route("ProdutoPorId/{produtoId}")]
+        public dynamic GetCursoPorId(int cursoId) // dynamic: qualquer coisa de qualquer jeito
+        {
+            Curso curso = CursoDAO.BuscarCursoPorId(cursoId);
+            if (curso != null)
             {
-                return NotFound();
-            }
+                // Entregar dados
+                dynamic cursoDinamico = new
+                {
+                    Nome = curso.NomeCurso,
+                    Duração = curso.DuracaoCurso,
+                    Categoria = curso.Categoria.NomeCategoria,
+                };
 
-            return Ok(curso);
+                return new { Curso = cursoDinamico }; // dar nome ao objeto dinâmico
+            }
+            return NotFound(); // retornar código http ao usuário
         }
 
-        // PUT: api/CursoAPI/5
-        [ResponseType(typeof(void))]
-        public IHttpActionResult PutCurso(int id, Curso curso)
+
+        // POST: api/Produto/CadastrarProduto
+        [Route("CadastrarProduto")]
+        public IHttpActionResult PostCadastrarCurso(Curso curso)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-
-            if (id != curso.CursoId)
+            if (CursoDAO.CadastrarCurso(curso))
             {
-                return BadRequest();
+                return Created("", curso);
             }
-
-            db.Entry(curso).State = EntityState.Modified;
-
-            try
+            else
             {
-                db.SaveChanges();
+                return Conflict();
             }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!CursoExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return StatusCode(HttpStatusCode.NoContent);
-        }
-
-        // POST: api/CursoAPI
-        [ResponseType(typeof(Curso))]
-        public IHttpActionResult PostCurso(Curso curso)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            db.Cursos.Add(curso);
-            db.SaveChanges();
-
-            return CreatedAtRoute("DefaultApi", new { id = curso.CursoId }, curso);
-        }
-
-        // DELETE: api/CursoAPI/5
-        [ResponseType(typeof(Curso))]
-        public IHttpActionResult DeleteCurso(int id)
-        {
-            Curso curso = db.Cursos.Find(id);
-            if (curso == null)
-            {
-                return NotFound();
-            }
-
-            db.Cursos.Remove(curso);
-            db.SaveChanges();
-
-            return Ok(curso);
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
-        private bool CursoExists(int id)
-        {
-            return db.Cursos.Count(e => e.CursoId == id) > 0;
         }
     }
+
+
 }

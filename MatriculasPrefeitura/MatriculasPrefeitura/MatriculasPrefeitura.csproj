@@ -184,6 +184,10 @@
     <Compile Include="Migrations\201809251214006_CreateDatabase.Designer.cs">
       <DependentUpon>201809251214006_CreateDatabase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809251314588_popopopopo.cs" />
+    <Compile Include="Migrations\201809251314588_popopopopo.Designer.cs">
+      <DependentUpon>201809251314588_popopopopo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluno.cs" />
     <Compile Include="Models\CategoriaCurso.cs" />
@@ -232,6 +236,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201809251214006_CreateDatabase.resx">
       <DependentUpon>201809251214006_CreateDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809251314588_popopopopo.resx">
+      <DependentUpon>201809251314588_popopopopo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

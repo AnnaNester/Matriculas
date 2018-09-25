@@ -21,8 +21,12 @@ namespace MatriculasPrefeitura.Controllers
         }
 
         public ActionResult CadastrarAluno()
-        { 
-            return View();
+        {
+            if (TempData["Mensagem"] != null)
+            {
+                ModelState.AddModelError("", TempData["Mensagem"].ToString());
+            }
+            return View((Aluno)TempData["Aluno"]);
         }
 
         [HttpPost]
@@ -30,7 +34,7 @@ namespace MatriculasPrefeitura.Controllers
         {
             if (ModelState.IsValid)
             {
-                if(fupImagem != null)
+                if (fupImagem != null)
                 {
                     string nomeImagem = Path.GetFileName(fupImagem.FileName);
                     string caminho = Path.Combine(Server.MapPath("~/Images/"), nomeImagem);
@@ -41,14 +45,19 @@ namespace MatriculasPrefeitura.Controllers
                 {
                     aluno.FotoAluno = "semImagem.jpeg";
                 }
-                AlunoDAO.CadastrarAluno(aluno);
+                if (AlunoDAO.CadastrarAluno(aluno) == true)
+                {
+                    ModelState.AddModelError("", "Aluno cadastrado com sucesso!");
+                    return View(aluno);
+                }
+                ModelState.AddModelError("", "Não é possível alterar um aluno com o mesmo CPF!");
                 return View(aluno);
             }
             else
             {
                 return View(aluno);
             }
-            
+
         }
 
         public ActionResult AlterarAluno(int id)
@@ -64,8 +73,13 @@ namespace MatriculasPrefeitura.Controllers
             alunoOriginal.CPFAluno = alunoAlterado.CPFAluno;
             alunoOriginal.CursoMatriculado = alunoAlterado.CursoMatriculado;
             alunoOriginal.FotoAluno = alunoAlterado.FotoAluno;
-            alunoOriginal.EnderecoAluno = alunoAlterado.EnderecoAluno;
-            
+            alunoOriginal.Localidade = alunoAlterado.Localidade;
+            alunoOriginal.Logradouro = alunoAlterado.Logradouro;
+            alunoOriginal.Numero = alunoAlterado.Numero;
+            alunoOriginal.Bairro = alunoAlterado.Bairro;
+            alunoOriginal.CEP = alunoAlterado.CEP;
+            alunoOriginal.UF = alunoAlterado.UF;
+
 
             if (ModelState.IsValid)
             {
@@ -84,7 +98,7 @@ namespace MatriculasPrefeitura.Controllers
                 return View(alunoOriginal);
             }
         }
-    
+
 
         public ActionResult ExcluirAluno(int id)
         {
@@ -97,7 +111,7 @@ namespace MatriculasPrefeitura.Controllers
         {
             try
             {
-                string url = "https://viacep.com.br/ws/" + aluno.EnderecoAluno + "/json/";
+                string url = "https://viacep.com.br/ws/" + aluno.CEP + "/json/";
 
                 WebClient client = new WebClient();
                 string json = client.DownloadString(url);
@@ -116,6 +130,8 @@ namespace MatriculasPrefeitura.Controllers
             }
 
             return RedirectToAction("CadastrarAluno", "Aluno");
+
         }
+
     }
 }

@@ -15,10 +15,18 @@ namespace MatriculasPrefeitura.DAL
             return context.Alunos.ToList();
         }
 
-        public static void CadastrarAluno(Aluno aluno)
+        public static bool CadastrarAluno(Aluno aluno)
         {
-             context.Alunos.Add(aluno);
-             context.SaveChanges();
+            if (BuscarAlunoPorCPF(aluno) == null)
+            {
+                context.Alunos.Add(aluno);
+                context.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public static void ExcluirAluno(int id)
@@ -34,7 +42,7 @@ namespace MatriculasPrefeitura.DAL
 
         public static bool AlterarAluno(Aluno aluno)
         {
-            if (context.Alunos.FirstOrDefault (x => x.NomeAluno.Equals(aluno.NomeAluno) && x.NumAluno != aluno.NumAluno) == null)
+            if (context.Alunos.FirstOrDefault(x => x.NomeAluno.Equals(aluno.NomeAluno) && x.NumAluno != aluno.NumAluno) == null)
             {
                 context.Entry(aluno).State = EntityState.Modified;
                 context.SaveChanges();

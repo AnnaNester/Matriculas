@@ -17,10 +17,18 @@ namespace MatriculasPrefeitura.DAL
             return context.Professores.ToList();
         }
 
-        public static void CadastrarProfessor(Professor professor)
+        public static bool CadastrarProfessor(Professor professor)
         {
-            context.Professores.Add(professor);
-            context.SaveChanges();
+            if (BuscarProfessorPorCPF(professor) == null)
+            {
+                context.Professores.Add(professor);
+                context.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public static Professor BuscarProfessorPorId(int id)
@@ -45,6 +53,11 @@ namespace MatriculasPrefeitura.DAL
         {
             context.Professores.Remove(BuscarProfessorPorId(id));
             context.SaveChanges();
+        }
+
+        public static Professor BuscarProfessorPorCPF(Professor professor)
+        {
+            return context.Professores.FirstOrDefault(x => x.CPFProfessor.Equals(professor.CPFProfessor));
         }
 
 

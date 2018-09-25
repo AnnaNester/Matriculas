@@ -19,7 +19,18 @@ namespace MatriculasPrefeitura.Controllers
         {
             return View();
         }
-        // [HttpPost]
+
+        public ActionResult CadastrarProfessor()
+        {
+            if (TempData["Mensagem"] != null)
+            {
+                ModelState.AddModelError("", TempData["Mensagem"].ToString());
+            }
+            return View((Professor)TempData["Professor"]);
+        }
+
+
+        [HttpPost]
         public ActionResult CadastrarProfessor(Professor professor, HttpPostedFileBase fupImagem)
         {
             if (ModelState.IsValid)
@@ -36,8 +47,17 @@ namespace MatriculasPrefeitura.Controllers
                     professor.FotoProfessor = "semImagem.jpg"; // ENCONTRAR FOTO SEM NADA PRA COLOCAR AQUI
                 }
 
-                ProfessorDAO.CadastrarProfessor(professor);
-                return View(professor);
+                if (ProfessorDAO.CadastrarProfessor(professor) == true)
+                {
+                    ModelState.AddModelError("", "Professor adicionado com sucesso!");
+                    return View(professor);
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Não é possível alterar um professor com o mesmo CPF!");
+                    return View(professor);
+                }
+
             }
             else
             {
@@ -59,7 +79,12 @@ namespace MatriculasPrefeitura.Controllers
             professorOriginal.CPFProfessor = professorAlterado.CPFProfessor;
             professorOriginal.FormacaoProfessor = professorAlterado.FormacaoProfessor;
             professorOriginal.FotoProfessor = professorAlterado.FotoProfessor;
-            professorOriginal.EnderecoProfessor = professorAlterado.EnderecoProfessor;
+            professorOriginal.Logradouro = professorAlterado.Logradouro;
+            professorOriginal.CEP = professorAlterado.CEP;
+            professorOriginal.Numero = professorAlterado.Numero;
+            professorOriginal.Bairro = professorAlterado.Bairro;
+            professorOriginal.Localidade = professorAlterado.Localidade;
+            professorOriginal.UF = professorAlterado.UF;
 
 
             if (ModelState.IsValid)
@@ -92,7 +117,7 @@ namespace MatriculasPrefeitura.Controllers
         {
             try
             {
-                string url = "https://viacep.com.br/ws/" + professor.EnderecoProfessor + "/json/";
+                string url = "https://viacep.com.br/ws/" + professor.CEP + "/json/";
 
                 WebClient client = new WebClient();
                 string json = client.DownloadString(url);

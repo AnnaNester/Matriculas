@@ -25,8 +25,28 @@ namespace MatriculasPrefeitura.Models
         public string FotoAluno { get; set; }
 
         [Required(ErrorMessage = "Campo obrigatório")]
-        [Display(Name = "Endereço do Aluno")]
-        public string EnderecoAluno { get; set; }
+        [Display(Name = "Rua do Aluno")]
+        public string Logradouro { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório")]
+        [Display(Name = "CEP do Aluno")]
+        public string CEP { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório")]
+        [Display(Name = "Bairro do Aluno")]
+        public string Bairro { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório")]
+        [Display(Name = "Cidade do Aluno")]
+        public string Localidade { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório")]
+        [Display(Name = "Estado do Aluno")]
+        public string UF { get; set; }
+
+        [Required(ErrorMessage = "Campo obrigatório")]
+        [Display(Name = "Número da Casa do Aluno")]
+        public int Numero { get; set; }
 
     }
 }
