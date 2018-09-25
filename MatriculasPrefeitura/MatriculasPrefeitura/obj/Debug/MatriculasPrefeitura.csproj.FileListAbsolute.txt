@@ -240,15 +240,11 @@ C:\Users\anna\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\
 C:\Users\anna\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\bin\System.Web.Webpages.Razor.xml
 C:\Users\anna\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\bin\System.Web.Helpers.xml
 C:\Users\anna\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\bin\System.Web.Mvc.xml
-C:\Users\anna\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.CreateTable.resources
 C:\Users\anna\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.csproj.GenerateResource.cache
 C:\Users\anna\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.csproj.CoreCompileInputs.cache
 C:\Users\anna\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.csproj.CopyComplete
 C:\Users\anna\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.dll
 C:\Users\anna\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.pdb
-C:\Users\anna\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.AlterTableCurso.resources
-C:\Users\anna\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.AlterTable.resources
-C:\Users\anna\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.AlterTable1.resources
 C:\Users\Aluno\source\repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.CreateDatabase.resources
 C:\Users\Aluno\source\repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.csproj.GenerateResource.Cache
 C:\Users\Aluno\Source\Repos\Matriculas4\MatriculasPrefeitura\MatriculasPrefeitura\bin\ApplicationInsights.config
@@ -312,3 +308,6 @@ C:\Users\Aluno\Source\Repos\Matriculas4\MatriculasPrefeitura\MatriculasPrefeitur
 C:\Users\Aluno\Source\Repos\Matriculas4\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.dll
 C:\Users\Aluno\Source\Repos\Matriculas4\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.pdb
 C:\Users\Aluno\Source\Repos\Matriculas4\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.popopopopo.resources
+C:\Users\anna\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.csprojAssemblyReference.cache
+C:\Users\anna\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.CreateDatabase.resources
+C:\Users\anna\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.popopopopo.resources

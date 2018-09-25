@@ -89,41 +89,64 @@ namespace MatriculasPrefeitura.Controllers
         }
 
         [HttpPost]
-        public ActionResult EditarCurso(Curso cursoAlterado)
+        public ActionResult EditarCurso([Bind(Include = "CursoId, NomeCurso, DuracaoCurso, QtdeVagas, DescricaoCurso, Logradouro, Localidade, UF, Cep, Bairro, Numero")] Curso cursoAlterado, int? Professores, int? Categorias, HttpPostedFileBase fupImagem)
         {
-            ViewBag.Categorias = new SelectList(CategoriaDAO.RetornarCategoria(), "CategoriaId", "NomeCategoria");
-            ViewBag.Professores = new SelectList(ProfessorDAO.RetornarProfessores(), "NumProfessor", "NomeProfessor");
-            if (ModelState.IsValid)
             {
+                ViewBag.Categorias = new SelectList(CategoriaDAO.RetornarCategoria(), "CategoriaId", "NomeCategoria");
+                ViewBag.Professores = new SelectList(ProfessorDAO.RetornarProfessores(), "NumProfessor", "NomeProfessor");
                 Curso cursoOriginal = CursoDAO.BuscarCursoPorId(cursoAlterado.CursoId);
-                cursoOriginal.NomeCurso = cursoAlterado.NomeCurso;
-                cursoOriginal.DescricaoCurso = cursoAlterado.DescricaoCurso;
-                cursoOriginal.DuracaoCurso = cursoAlterado.DuracaoCurso;
-                cursoOriginal.Categoria = cursoAlterado.Categoria;
-                cursoOriginal.Logradouro = cursoAlterado.Logradouro;
-                cursoOriginal.Localidade = cursoAlterado.Localidade;
-                cursoOriginal.Bairro = cursoAlterado.Bairro;
-                cursoOriginal.CEP = cursoAlterado.CEP;
-                cursoOriginal.Numero = cursoAlterado.Numero;
-                cursoOriginal.UF = cursoAlterado.UF;
-                cursoOriginal.QtdeVagas = cursoAlterado.QtdeVagas;
-                cursoOriginal.FotoCurso = cursoAlterado.FotoCurso;
-                cursoOriginal.Professor = cursoAlterado.Professor;
-
-
-                if (CursoDAO.AlterarCurso(cursoAlterado))
+                if (ModelState.IsValid)
                 {
-                    return RedirectToAction("Index", "Curso");
+                    if (Categorias != null)
+                    {
+                        if (fupImagem != null)
+                        {
+                            string nomeImagem = Path.GetFileName(fupImagem.FileName);
+                            string caminho = Path.Combine(Server.MapPath("~/Images/"), nomeImagem);
+
+                            fupImagem.SaveAs(caminho);
+
+                            cursoAlterado.FotoCurso = nomeImagem;
+                        }
+                        else
+                        {
+                            cursoAlterado.FotoCurso = "image (1).jpeg";
+                        }
+
+                        cursoAlterado.Categoria = CategoriaDAO.BuscarCategoriaPorId(Categorias);
+                        cursoOriginal.NomeCurso = cursoAlterado.NomeCurso;
+                        cursoOriginal.DescricaoCurso = cursoAlterado.DescricaoCurso;
+                        cursoOriginal.DuracaoCurso = cursoAlterado.DuracaoCurso;
+                        cursoOriginal.Categoria = cursoAlterado.Categoria;
+                        cursoOriginal.Logradouro = cursoAlterado.Logradouro;
+                        cursoOriginal.Localidade = cursoAlterado.Localidade;
+                        cursoOriginal.Bairro = cursoAlterado.Bairro;
+                        cursoOriginal.CEP = cursoAlterado.CEP;
+                        cursoOriginal.Numero = cursoAlterado.Numero;
+                        cursoOriginal.UF = cursoAlterado.UF;
+                        cursoOriginal.QtdeVagas = cursoAlterado.QtdeVagas;
+                        cursoOriginal.FotoCurso = cursoAlterado.FotoCurso;
+                        cursoOriginal.Professor = cursoAlterado.Professor;
+                        if (CursoDAO.AlterarCurso(cursoAlterado))
+                        {
+                            return RedirectToAction("Index", "Curso");
+                        }
+                        else
+                        {
+                            ModelState.AddModelError("", "Não é possível adicionar um curso com o mesmo nome!");
+                            return View(cursoAlterado);
+                        }
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "Por favor selecione uma categoria!");
+                        return View(cursoAlterado);
+                    }
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Não é possível alterar o curso com o mesmo nome!");
                     return View(cursoAlterado);
                 }
-            }
-            else
-            {
-                return View(cursoAlterado);
             }
         }
 
@@ -162,6 +185,32 @@ namespace MatriculasPrefeitura.Controllers
             }
 
             return RedirectToAction("CadastrarCurso", "Curso");
+        }
+
+        [HttpPost]
+        public ActionResult PesquisarCEPAlterar(Curso endereco)
+        {
+            try
+            {
+                string url = "https://viacep.com.br/ws/" + endereco.CEP + "/json/";
+
+                WebClient client = new WebClient();
+                string json = client.DownloadString(url);
+                // Converter string pra UTF-8
+                byte[] bytes = Encoding.Default.GetBytes(json);
+                json = Encoding.UTF8.GetString(bytes);
+                // Converter json para objeto
+                endereco = JsonConvert.DeserializeObject<Curso>(json);
+
+                // Passar informação para qualquer action do controller
+                TempData["Curso"] = endereco;
+            }
+            catch (Exception)
+            {
+                TempData["Mensagem"] = "CEP Inválido!";
+            }
+
+            return RedirectToAction("EditarCurso", "Curso");
         }
     }
 }

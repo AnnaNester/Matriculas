@@ -1,4 +1,5 @@
 ﻿@using MatriculasPrefeitura.DAL
+@using MatriculasPrefeitura.Models
 
 <!DOCTYPE html>
 
@@ -15,7 +16,7 @@
 
     <nav class="navbar navbar-dark bg-dark">
         @Html.ActionLink("Cursos Prefeitura", "Index", "Home", null, new { @class = "navbar-brand" })
-        
+
     </nav>
 
 
@@ -27,8 +28,32 @@
             <p>&copy; @DateTime.Now.Year - Desenvolvido Por Anna Nester e Mirella Lima</p>
         </footer>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <div id="googleMap" style="height:400px;width:100%;"></div>
+    <script>
+        function myMap() {
+            var myCenter = new google.maps.LatLng(-15.768466, -47.929459);
+            var mapProp = { center: myCenter, zoom: 8, scrollwheel: false, draggable: true, mapTypeId: google.maps.MapTypeId.ROADMAP };
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+            var marker = new google.maps.Marker({ position: myCenter });
+            marker.setMap(map);
+        }
+        var marker = new google.maps.Marker
+            (
+            {
+                position: new google.maps.LatLng(-15.682543, -47.978874),
+                map: mapa,
+            }
+            );
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=put_your_api_key_here&callback=myMap"></script>
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpbsdLaCvNpC0jObCLKvRSH8eFXwuZ5Yk&callback=initMap">
+    </script>
 </body>
 </html>
