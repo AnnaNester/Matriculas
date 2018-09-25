@@ -17,6 +17,5 @@ namespace MatriculasPrefeitura.Models
 
         public DbSet<Matricula> Matriculas { get; set; }
 
-        public DbSet<Endereco> Enderecos { get; set; }
     }
 }

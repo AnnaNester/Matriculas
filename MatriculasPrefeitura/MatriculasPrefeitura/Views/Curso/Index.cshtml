@@ -2,13 +2,37 @@
 @model List<Curso>
 
 @{
-    
+    DateTime data = ViewBag.Data;
 }
 
 <div>
     <h2>Gerenciamento de Cursos</h2>
-        
-    
+
+    <table class="table table-hover table-striped" style="margin-top:30px">
+        <tr>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Duração</th>
+            <th>Quantidade</th>
+            <th>Categoria</th>
+            <th>Professor</th>
+            <th>Alterar</th>
+            <th>Remover</th>
+        </tr>
+        @foreach (var curso in Model)
+            {
+            <tr>
+                <td>@curso.NomeCurso</td>
+                <td>@curso.DescricaoCurso</td>
+                <td>@curso.DuracaoCurso</td>
+                <td>@curso.QtdeVagas</td>
+                <td>@curso.Categoria.NomeCategoria</td>
+                <td><img src="~/Images/@curso.FotoCurso" alt="Imagem do Curso" style="width:100px; height:100px" /></td>
+                <td>@Html.ActionLink("Alterar", "EditarCurso", "Curso", new { id = curso.CursoId }, new { @class = "btn btn-info" })</td>
+                <td>@Html.ActionLink("Remover", "RemoverCurso", "Curso", new { id = curso.CursoId }, new { @class = "btn btn-danger" })</td>
+            </tr>
+        }
+    </table>
+
+    <p>Dados atualizados às: <b> @data</b></p>
 </div>
-
-

@@ -19,13 +19,6 @@ namespace MatriculasPrefeitura.Models
         [Display(Name = "Duração do Curso")]
         public int DuracaoCurso { get; set; }
 
-        [Display(Name = "Data Início do Curso")]
-        [DataType(DataType.Date, ErrorMessage = "Data em formato inválido")]
-        public DateTime DataInicio { get; set; }
-
-        [Display(Name = "Local do Curso")]
-        public Endereco LocalCurso { get; set; }
-
         [Display(Name = "Quantidade de vagas do Curso")]
         public int QtdeVagas { get; set; }
 
@@ -39,11 +32,26 @@ namespace MatriculasPrefeitura.Models
         [Display(Name = "Imagem do curso")]
         public string FotoCurso { get; set; }
 
-        public string Latitude { get; set; }
-
-        public string Longitude { get; set; }
-
         [Display(Name = "Professor do curso")]
         public Professor Professor { get; set; }
+
+        [Display(Name = "Endereço do curso")]
+        public string Logradouro { get; set; }
+
+        [Display(Name = "CEP do curso")]
+        public string CEP { get; set; }
+
+        [Display(Name = "Bairro do curso")]
+        public string Bairro { get; set; }
+
+        [Display(Name = "Localidade do curso")]
+        public string Localidade { get; set; }
+
+        [Display(Name = "UF do curso")]
+        public string UF { get; set; }
+
+        [Display(Name = "Número do curso")]
+        public int Numero { get; set; }
+
     }
 }

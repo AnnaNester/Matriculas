@@ -185,8 +185,6 @@ C:\Users\Aluno\source\repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura
 C:\Users\Aluno\source\repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\bin\System.Net.Http.Formatting.xml
 C:\Users\Aluno\source\repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\bin\System.Web.Http.xml
 C:\Users\Aluno\source\repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\bin\System.Web.Http.WebHost.xml
-C:\Users\Aluno\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.CreateTable.resources
-C:\Users\Aluno\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.csproj.GenerateResource.Cache
 C:\Users\anna\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\bin\ApplicationInsights.config
 C:\Users\anna\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\bin\roslyn\csc.exe
 C:\Users\anna\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -251,3 +249,5 @@ C:\Users\anna\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\
 C:\Users\anna\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.AlterTableCurso.resources
 C:\Users\anna\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.AlterTable.resources
 C:\Users\anna\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.AlterTable1.resources
+C:\Users\Aluno\source\repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.CreateDatabase.resources
+C:\Users\Aluno\source\repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.csproj.GenerateResource.Cache

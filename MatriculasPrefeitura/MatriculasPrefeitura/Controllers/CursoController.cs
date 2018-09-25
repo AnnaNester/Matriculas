@@ -14,7 +14,7 @@ namespace MatriculasPrefeitura.Controllers
 {
     public class CursoController : Controller
     {
-        public ActionResult ListarProduto()
+        public ActionResult ListarCursos()
         {
             CursoDAO.RetornarCursos();
             return View();
@@ -36,8 +36,7 @@ namespace MatriculasPrefeitura.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult CadastrarCurso([Bind(Include = "CursoId, NomeCurso, DuracaoCurso, QtdeVagas, DescricaoCurso, Logradouro, Localidade, UF, Cep, Bairro")] Curso curso, int? Professores, int? Categorias, HttpPostedFileBase fupImagem)
+        public ActionResult CadastrarCurso([Bind(Include = "CursoId, NomeCurso, DuracaoCurso, QtdeVagas, DescricaoCurso, Logradouro, Localidade, UF, Cep, Bairro, Numero")] Curso curso, int? Professores, int? Categorias, HttpPostedFileBase fupImagem)
         {
             ViewBag.Categorias = new SelectList(CategoriaDAO.RetornarCategoria(), "CategoriaId", "NomeCategoria");
             ViewBag.Professores = new SelectList(ProfessorDAO.RetornarProfessores(), "NumProfessor", "NomeProfessor");
@@ -82,14 +81,18 @@ namespace MatriculasPrefeitura.Controllers
             }
         }
 
-        public ActionResult AlterarCurso(int id)
+        public ActionResult EditarCurso(int id)
         {
+            ViewBag.Categorias = new SelectList(CategoriaDAO.RetornarCategoria(), "CategoriaId", "NomeCategoria");
+            ViewBag.Professores = new SelectList(ProfessorDAO.RetornarProfessores(), "NumProfessor", "NomeProfessor");
             return View(CursoDAO.BuscarCursoPorId(id));
         }
 
         [HttpPost]
-        public ActionResult AlterarCurso(Curso cursoAlterado)
+        public ActionResult EditarCurso(Curso cursoAlterado)
         {
+            ViewBag.Categorias = new SelectList(CategoriaDAO.RetornarCategoria(), "CategoriaId", "NomeCategoria");
+            ViewBag.Professores = new SelectList(ProfessorDAO.RetornarProfessores(), "NumProfessor", "NomeProfessor");
             if (ModelState.IsValid)
             {
                 Curso cursoOriginal = CursoDAO.BuscarCursoPorId(cursoAlterado.CursoId);
@@ -97,8 +100,15 @@ namespace MatriculasPrefeitura.Controllers
                 cursoOriginal.DescricaoCurso = cursoAlterado.DescricaoCurso;
                 cursoOriginal.DuracaoCurso = cursoAlterado.DuracaoCurso;
                 cursoOriginal.Categoria = cursoAlterado.Categoria;
-                cursoOriginal.LocalCurso = cursoAlterado.LocalCurso;
+                cursoOriginal.Logradouro = cursoAlterado.Logradouro;
+                cursoOriginal.Localidade = cursoAlterado.Localidade;
+                cursoOriginal.Bairro = cursoAlterado.Bairro;
+                cursoOriginal.CEP = cursoAlterado.CEP;
+                cursoOriginal.Numero = cursoAlterado.Numero;
+                cursoOriginal.UF = cursoAlterado.UF;
                 cursoOriginal.QtdeVagas = cursoAlterado.QtdeVagas;
+                cursoOriginal.FotoCurso = cursoAlterado.FotoCurso;
+                cursoOriginal.Professor = cursoAlterado.Professor;
 
 
                 if (CursoDAO.AlterarCurso(cursoAlterado))
@@ -128,11 +138,12 @@ namespace MatriculasPrefeitura.Controllers
             return ViewBag.Cursos = CategoriaDAO.BuscarCategoriaPorId(categoria);
         }
 
-        public ActionResult PesquisarCEP(Curso curso)
+        [HttpPost]
+        public ActionResult PesquisarCEP(Curso endereco)
         {
             try
             {
-                string url = "https://viacep.com.br/ws/" + curso.LocalCurso.CEP + "/json/";
+                string url = "https://viacep.com.br/ws/" + endereco.CEP + "/json/";
 
                 WebClient client = new WebClient();
                 string json = client.DownloadString(url);
@@ -140,10 +151,10 @@ namespace MatriculasPrefeitura.Controllers
                 byte[] bytes = Encoding.Default.GetBytes(json);
                 json = Encoding.UTF8.GetString(bytes);
                 // Converter json para objeto
-                curso = JsonConvert.DeserializeObject<Curso>(json);
+                endereco = JsonConvert.DeserializeObject<Curso>(json);
 
                 // Passar informação para qualquer action do controller
-                TempData["Curso"] = curso;
+                TempData["Curso"] = endereco;
             }
             catch (Exception)
             {

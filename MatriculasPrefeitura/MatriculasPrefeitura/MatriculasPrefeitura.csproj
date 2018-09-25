@@ -45,11 +45,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -180,28 +180,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201809241252455_CreateTable.cs" />
-    <Compile Include="Migrations\201809241252455_CreateTable.Designer.cs">
-      <DependentUpon>201809241252455_CreateTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809241851215_AlterTableCurso.cs" />
-    <Compile Include="Migrations\201809241851215_AlterTableCurso.Designer.cs">
-      <DependentUpon>201809241851215_AlterTableCurso.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809241938040_AlterTable.cs" />
-    <Compile Include="Migrations\201809241938040_AlterTable.Designer.cs">
-      <DependentUpon>201809241938040_AlterTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809241946584_AlterTable1.cs" />
-    <Compile Include="Migrations\201809241946584_AlterTable1.Designer.cs">
-      <DependentUpon>201809241946584_AlterTable1.cs</DependentUpon>
+    <Compile Include="Migrations\201809251214006_CreateDatabase.cs" />
+    <Compile Include="Migrations\201809251214006_CreateDatabase.Designer.cs">
+      <DependentUpon>201809251214006_CreateDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluno.cs" />
     <Compile Include="Models\CategoriaCurso.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\Curso.cs" />
-    <Compile Include="Models\Endereco.cs" />
     <Compile Include="Models\Matricula.cs" />
     <Compile Include="Models\Professor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -231,6 +218,7 @@
     <Content Include="Views\Professor\EditarProfessor.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\CursoDetalhe.cshtml" />
+    <Content Include="Views\Shared\Mapa.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -242,17 +230,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201809241252455_CreateTable.resx">
-      <DependentUpon>201809241252455_CreateTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809241851215_AlterTableCurso.resx">
-      <DependentUpon>201809241851215_AlterTableCurso.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809241938040_AlterTable.resx">
-      <DependentUpon>201809241938040_AlterTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809241946584_AlterTable1.resx">
-      <DependentUpon>201809241946584_AlterTable1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201809251214006_CreateDatabase.resx">
+      <DependentUpon>201809251214006_CreateDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

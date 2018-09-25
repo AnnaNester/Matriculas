@@ -27,7 +27,7 @@ namespace MatriculasPrefeitura.Models
 
         [Required(ErrorMessage = "Campo obrigatório")]
         [Display(Name = "Endereço do Professor")]
-        public Endereco EnderecoProfessor { get; set; }
+        public string EnderecoProfessor { get; set; }
 
     }
 }
