@@ -114,6 +114,8 @@ namespace MatriculasPrefeitura.Controllers
                         }
 
                         cursoAlterado.Categoria = CategoriaDAO.BuscarCategoriaPorId(Categorias);
+
+                        // ESTOURA NULL REFERENCE AQUI
                         cursoOriginal.NomeCurso = cursoAlterado.NomeCurso;
                         cursoOriginal.DescricaoCurso = cursoAlterado.DescricaoCurso;
                         cursoOriginal.DuracaoCurso = cursoAlterado.DuracaoCurso;
