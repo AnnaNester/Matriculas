@@ -23,12 +23,28 @@
             <br />
             @Model.DescricaoCurso<br />
             <b>Categoria: </b>@Model.Categoria.NomeCategoria<br />
+            <b>Localização do Curso: </b><br />
+            <b>@Model.Logradouro</b><br />
+            <b>Número: @Model.Numero</b><br />
+            <b>Bairro: @Model.Bairro</b><br />
+            <b>Cidade: @Model.Localidade</b><br />
+            <b>CEP: @Model.CEP</b><br />
+            <b>UF: @Model.UF</b><br />
+        </td>
+        <td>
+            <b>Professor: </b> @Model.Professor.NomeProfessor <br />
+            <b>Formação: </b> @Model.Professor.FormacaoProfessor <br />
         </td>
     </tr>
     <tr>
         <td style="vertical-align: top; padding-left: 30px">
-            <b>Localização do Curso: </b>
-            <div id="googleMap" style="height:400px;width:100%;">
+            <br />
+            <br />
+            @* Passando as informações de endereço para a function codeAddress() no Layout para gerar o mapa com o marcador *@
+            <input id="address" type="hidden" value="@Model.Logradouro +  @Model.Numero + @Model.Bairro + @Model.Localidade + @Model.CEP + @Model.UF">
+            <div align="center">
+                <div id="map-canvas" style="height:400px;width:100%;">
+                </div>
             </div>
         </td>
     </tr>
