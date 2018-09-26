@@ -55,7 +55,7 @@ namespace MatriculasPrefeitura.DAL
         {
             Matricula matricula = new Matricula();
 
-            matricula.AlunoMatriculado = aluno;
+            matricula.AlunoMatriculado = matricula.AlunoMatriculado;
             matricula.CursoMatriculado = aluno.CursoMatriculado;
             matricula.DataMatricula = DateTime.Now;
 

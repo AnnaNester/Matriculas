@@ -1,7 +1,47 @@
-﻿
+﻿@model MatriculasPrefeitura.Models.Matricula
+
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Central de Matrículas</h2>
+
+@using (Html.BeginForm("Index", "Matricula", FormMethod.Post, new
+{
+    @class = "form-horizontal", enctype = "multipart/form-data"
+}))
+{
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AlunoMatriculado.CPFAluno, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AlunoMatriculado.CPFAluno, new { htmlAttributes = new { @class = "form-control", @placeholder = "CPF do Aluno" } })
+                @Html.ValidationMessageFor(model => model.AlunoMatriculado.CPFAluno, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CursoMatriculado.CursoId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CursoMatriculado.CursoId, new { htmlAttributes = new { @class = "form-control", @placeholder = "ID do Curso" } })
+                @Html.ValidationMessageFor(model => model.CursoMatriculado.CursoId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Realizar Matrícula" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+
+}
+
+<div>
+    @Html.ActionLink("Voltar ao Menu", "Index", "Home") 
+</div>
+
 

@@ -189,6 +189,10 @@
     <Compile Include="Migrations\201809251314588_popopopopo.Designer.cs">
       <DependentUpon>201809251314588_popopopopo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809260231327_jojojo.cs" />
+    <Compile Include="Migrations\201809260231327_jojojo.Designer.cs">
+      <DependentUpon>201809260231327_jojojo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluno.cs" />
     <Compile Include="Models\CategoriaCurso.cs" />
@@ -240,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809251314588_popopopopo.resx">
       <DependentUpon>201809251314588_popopopopo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809260231327_jojojo.resx">
+      <DependentUpon>201809260231327_jojojo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

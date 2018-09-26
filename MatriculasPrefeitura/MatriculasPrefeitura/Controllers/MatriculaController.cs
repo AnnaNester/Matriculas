@@ -2,6 +2,7 @@
 using MatriculasPrefeitura.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -16,18 +17,24 @@ namespace MatriculasPrefeitura.Controllers
             return View();
         }
 
-        public ActionResult MatricularAluno(Aluno aluno)
+        public ActionResult MatricularAluno(Matricula matricula)
         {
-            if (AlunoDAO.BuscarAlunoPorCPF(aluno) == null)
+            if (AlunoDAO.BuscarAlunoPorCPF(matricula.AlunoMatriculado) == null)
             {
-                AlunoDAO.CadastrarAluno(aluno);
+                ModelState.AddModelError("", TempData["Aluno não cadastrado no sistema!"].ToString());
             }
             else
             {
-                AlunoDAO.MatricularAluno(aluno);
+                Aluno alu = AlunoDAO.BuscarAlunoPorCPF(matricula.AlunoMatriculado);
+                AlunoDAO.MatricularAluno(alu);
+                ModelState.AddModelError("", TempData["Matrícula realizada com sucesso!"].ToString());
             }
 
-            return View();
+            return View("Index", "Home");
         }
+
+        
+
+        
     }
 }

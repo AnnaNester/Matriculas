@@ -308,3 +308,4 @@ C:\Users\anna\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\
 C:\Users\anna\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.popopopopo.resources
 C:\Users\Mirella\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.CreateDatabase.resources
 C:\Users\Mirella\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.popopopopo.resources
+C:\Users\Mirella\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.jojojo.resources

@@ -14,7 +14,7 @@ namespace MatriculasPrefeitura.DAL
         {
             return context.Matriculas.ToList();
         }
-        public void MatricularAluno(Matricula matricula)
+        public static void MatricularAluno(Matricula matricula)
         {
             Matricula cadastro = context.Matriculas.Include("Aluno").FirstOrDefault(x => x.AlunoMatriculado.CPFAluno == matricula.AlunoMatriculado.CPFAluno);
             if (cadastro == null)

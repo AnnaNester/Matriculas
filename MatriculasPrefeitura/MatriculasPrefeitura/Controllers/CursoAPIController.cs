@@ -18,20 +18,20 @@ namespace MatriculasPrefeitura.Controllers
     {
         private Context db = new Context();
 
-        [Route("Produtos")]
+        [Route("Cursos")]
         public List<Curso> GetCursos() 
         {
             return CursoDAO.RetornarCursos();
         }
 
-        [Route("ProdutosPorCategoria/{categoriaId}")]
+        [Route("CursosPorCategoria/{categoriaId}")]
         public List<Curso> GetCursosPorCategoria(int categoriaId) // mesmo nome que foi definido acima
         {
             return CursoDAO.BuscarCursoPorCategoria(categoriaId);
         }
 
         // GET: api/Produto/ProdutoPorId/5 exemplo
-        [Route("ProdutoPorId/{produtoId}")]
+        [Route("CursoPorId/{cursoId}")]
         public dynamic GetCursoPorId(int cursoId) // dynamic: qualquer coisa de qualquer jeito
         {
             Curso curso = CursoDAO.BuscarCursoPorId(cursoId);
@@ -52,7 +52,7 @@ namespace MatriculasPrefeitura.Controllers
 
 
         // POST: api/Produto/CadastrarProduto
-        [Route("CadastrarProduto")]
+        [Route("CadastrarCurso")]
         public IHttpActionResult PostCadastrarCurso(Curso curso)
         {
             if (!ModelState.IsValid)
