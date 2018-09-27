@@ -21,13 +21,14 @@ namespace MatriculasPrefeitura.Controllers
         {
             if (AlunoDAO.BuscarAlunoPorCPF(matricula.AlunoMatriculado) == null)
             {
-                ModelState.AddModelError("", TempData["Aluno não cadastrado no sistema!"].ToString());
+                ModelState.AddModelError("", "Aluno não cadastrado no sistema!");
             }
             else
             {
                 Aluno alu = AlunoDAO.BuscarAlunoPorCPF(matricula.AlunoMatriculado);
-                AlunoDAO.MatricularAluno(alu);
-                ModelState.AddModelError("", TempData["Matrícula realizada com sucesso!"].ToString());
+                matricula.AlunoMatriculado = alu;
+                AlunoDAO.MatricularAluno(matricula);
+                ModelState.AddModelError("", "Matrícula realizada com sucesso!");
             }
 
             return View("Index", "Home");
