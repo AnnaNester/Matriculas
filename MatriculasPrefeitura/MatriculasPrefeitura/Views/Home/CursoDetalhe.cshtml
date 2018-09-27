@@ -23,6 +23,7 @@
             <br />
             @Model.DescricaoCurso<br />
             <b>Categoria: </b>@Model.Categoria.NomeCategoria<br />
+            <b>Quantidade de Vagas: </b>@Model.QtdeVagas<br />
             <b>Localização do Curso: </b><br />
             <b>@Model.Logradouro</b><br />
             <b>Número: @Model.Numero</b><br />
@@ -30,10 +31,11 @@
             <b>Cidade: @Model.Localidade</b><br />
             <b>CEP: @Model.CEP</b><br />
             <b>UF: @Model.UF</b><br />
+            @Html.ActionLink("Realizar Matrícula", "Index", "Matricula", null, new { @class = "btn btn-info" })
         </td>
         <td>
-            <b>Professor: </b> @Model.Professor.NomeProfessor <br />
-            <b>Formação: </b> @Model.Professor.FormacaoProfessor <br />
+            @*<b>Professor: </b> @Model.Professor.NomeProfessor <br />
+                <b>Formação: </b> @Model.Professor.FormacaoProfessor <br />*@
         </td>
     </tr>
     <tr>
