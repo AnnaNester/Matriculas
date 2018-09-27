@@ -12,6 +12,8 @@ using Newtonsoft.Json;
 
 namespace MatriculasPrefeitura.Controllers
 {
+    
+
     public class CursoController : Controller
     {
         public ActionResult ListarCursos()
@@ -81,74 +83,50 @@ namespace MatriculasPrefeitura.Controllers
             }
         }
 
-        public ActionResult EditarCurso(int id)
+        public ActionResult AlterarCurso(int id)
         {
+            Curso curso = CursoDAO.BuscarCursoPorId(id);
             ViewBag.Categorias = new SelectList(CategoriaDAO.RetornarCategoria(), "CategoriaId", "NomeCategoria");
             ViewBag.Professores = new SelectList(ProfessorDAO.RetornarProfessores(), "NumProfessor", "NomeProfessor");
-            return View(CursoDAO.BuscarCursoPorId(id));
+            return View(curso);
         }
 
         [HttpPost]
-        public ActionResult EditarCurso([Bind(Include = "CursoId, NomeCurso, DuracaoCurso, QtdeVagas, DescricaoCurso, Logradouro, Localidade, UF, Cep, Bairro, Numero")] Curso cursoAlterado, int? Professores, int? Categorias, HttpPostedFileBase fupImagem)
+        public ActionResult AlterarCurso([Bind(Include = "NumProfessor, CategoriaId, CursoId, NomeCurso, DescricaoCurso, DuracaoCurso, QtdeVagas, CEP, Logradouro, Localidade, Bairro, UF, Numero")]
+        Curso cursoAlterado)
         {
+            ViewBag.Categorias = new SelectList(CategoriaDAO.RetornarCategoria(), "CategoriaId", "NomeCategoria");
+            ViewBag.Professores = new SelectList(ProfessorDAO.RetornarProfessores(), "NumProfessor", "NomeProfessor");
+            if (ModelState.IsValid)
             {
-                ViewBag.Categorias = new SelectList(CategoriaDAO.RetornarCategoria(), "CategoriaId", "NomeCategoria");
-                ViewBag.Professores = new SelectList(ProfessorDAO.RetornarProfessores(), "NumProfessor", "NomeProfessor");
                 Curso cursoOriginal = CursoDAO.BuscarCursoPorId(cursoAlterado.CursoId);
-                if (ModelState.IsValid)
+                cursoOriginal.NomeCurso = cursoAlterado.NomeCurso;
+                cursoAlterado.DescricaoCurso = cursoAlterado.DescricaoCurso;
+                cursoOriginal.DuracaoCurso = cursoAlterado.DuracaoCurso;
+                cursoOriginal.QtdeVagas = cursoAlterado.QtdeVagas;
+                cursoOriginal.Categoria = cursoAlterado.Categoria;
+                cursoOriginal.Professor = cursoAlterado.Professor;
+                cursoAlterado.CEP = cursoOriginal.CEP;
+                cursoAlterado.Logradouro = cursoOriginal.Logradouro;
+                cursoAlterado.Localidade = cursoOriginal.Localidade;
+                cursoAlterado.Bairro = cursoOriginal.Bairro;
+                cursoAlterado.UF = cursoOriginal.UF;
+                cursoAlterado.Numero = cursoOriginal.Numero;
+
+
+                if (CursoDAO.AlterarCurso(cursoAlterado))
                 {
-                    if (Categorias != null)
-                    {
-                        if (fupImagem != null)
-                        {
-                            string nomeImagem = Path.GetFileName(fupImagem.FileName);
-                            string caminho = Path.Combine(Server.MapPath("~/Images/"), nomeImagem);
-
-                            fupImagem.SaveAs(caminho);
-
-                            cursoAlterado.FotoCurso = nomeImagem;
-                        }
-                        else
-                        {
-                            cursoAlterado.FotoCurso = "image (1).jpeg";
-                        }
-
-                        cursoAlterado.Categoria = CategoriaDAO.BuscarCategoriaPorId(Categorias);
-
-                        // ESTOURA NULL REFERENCE AQUI
-                        cursoOriginal.NomeCurso = cursoAlterado.NomeCurso;
-                        cursoOriginal.DescricaoCurso = cursoAlterado.DescricaoCurso;
-                        cursoOriginal.DuracaoCurso = cursoAlterado.DuracaoCurso;
-                        cursoOriginal.Categoria = cursoAlterado.Categoria;
-                        cursoOriginal.Logradouro = cursoAlterado.Logradouro;
-                        cursoOriginal.Localidade = cursoAlterado.Localidade;
-                        cursoOriginal.Bairro = cursoAlterado.Bairro;
-                        cursoOriginal.CEP = cursoAlterado.CEP;
-                        cursoOriginal.Numero = cursoAlterado.Numero;
-                        cursoOriginal.UF = cursoAlterado.UF;
-                        cursoOriginal.QtdeVagas = cursoAlterado.QtdeVagas;
-                        cursoOriginal.FotoCurso = cursoAlterado.FotoCurso;
-                        cursoOriginal.Professor = cursoAlterado.Professor;
-                        if (CursoDAO.AlterarCurso(cursoAlterado))
-                        {
-                            return RedirectToAction("Index", "Curso");
-                        }
-                        else
-                        {
-                            ModelState.AddModelError("", "Não é possível adicionar um curso com o mesmo nome!");
-                            return View(cursoAlterado);
-                        }
-                    }
-                    else
-                    {
-                        ModelState.AddModelError("", "Por favor selecione uma categoria!");
-                        return View(cursoAlterado);
-                    }
+                    return RedirectToAction("Index", "Curso");
                 }
                 else
                 {
+                    ModelState.AddModelError("", "Não é possível alterar o curso com o mesmo nome!");
                     return View(cursoAlterado);
                 }
+            }
+            else
+            {
+                return View(cursoAlterado);
             }
         }
 

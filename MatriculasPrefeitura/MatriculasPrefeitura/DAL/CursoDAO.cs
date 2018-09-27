@@ -40,7 +40,7 @@ namespace MatriculasPrefeitura.DAL
 
         public static bool AlterarCurso(Curso curso)
         {
-            if (context.Cursos.Include("Categoria").FirstOrDefault(x => x.NomeCurso.Equals(curso.NomeCurso) && x.CursoId != curso.CursoId) == null)
+            if (context.Cursos.Include(p => p.Professor).Include(c => c.Categoria).Where(x => x.CursoId == curso.CursoId && x.NomeCurso == curso.NomeCurso).Single() == null)
             {
                 context.Entry(curso).State = EntityState.Modified;
                 context.SaveChanges();

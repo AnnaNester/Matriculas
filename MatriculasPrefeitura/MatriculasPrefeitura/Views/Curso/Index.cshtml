@@ -6,6 +6,11 @@
 }
 
 <div>
+    <li class="nav-item">
+        @Html.ActionLink("Cursos", "CadastrarCurso", "Curso", null, new { @class = "nav-link" })
+        @Html.ActionLink("Categoria", "CadastrarCategoria", "Categoria", null, new { @class = "nav-link" })
+        @Html.ActionLink("Matricula", "Index", "Matricula", null, new { @class = "nav-link" })
+    </li>
     <h2>Gerenciamento de Cursos</h2>
 
     <table class="table table-hover table-striped" style="margin-top:30px">
@@ -20,7 +25,7 @@
             <th>Remover</th>
         </tr>
         @foreach (var curso in Model)
-            {
+        {
             <tr>
                 <td>@curso.NomeCurso</td>
                 <td>@curso.DescricaoCurso</td>
@@ -28,7 +33,7 @@
                 <td>@curso.QtdeVagas</td>
                 <td>@curso.Categoria.NomeCategoria</td>
                 <td><img src="~/Images/@curso.FotoCurso" alt="Imagem do Curso" style="width:100px; height:100px" /></td>
-                <td>@Html.ActionLink("Alterar", "EditarCurso", "Curso", new { id = curso.CursoId }, new { @class = "btn btn-info" })</td>
+                <td>@Html.ActionLink("Alterar", "AlterarCurso", "Curso", new { id = curso.CursoId }, new { @class = "btn btn-info" })</td>
                 <td>@Html.ActionLink("Remover", "RemoverCurso", "Curso", new { id = curso.CursoId }, new { @class = "btn btn-danger" })</td>
             </tr>
         }

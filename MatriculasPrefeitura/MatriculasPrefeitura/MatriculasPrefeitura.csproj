@@ -220,7 +220,7 @@
     <Content Include="Views\Categoria\EditarCategoria.cshtml" />
     <Content Include="Views\Curso\Index.cshtml" />
     <Content Include="Views\Curso\CadastrarCurso.cshtml" />
-    <Content Include="Views\Curso\EditarCurso.cshtml" />
+    <Content Include="Views\Curso\AlterarCurso.cshtml" />
     <Content Include="Views\Matricula\Index.cshtml" />
     <Content Include="Views\Professor\Index.cshtml" />
     <Content Include="Views\Professor\CadastrarProfessor.cshtml" />
