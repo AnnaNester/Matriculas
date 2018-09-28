@@ -234,6 +234,7 @@
     <Content Include="Views\Professor\EditarProfessor.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\CursoDetalhe.cshtml" />
+    <Content Include="Views\Home\MostrarTurma.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

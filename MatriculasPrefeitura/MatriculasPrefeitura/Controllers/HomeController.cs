@@ -26,6 +26,11 @@ namespace MatriculasPrefeitura.Controllers
             return View(CursoDAO.BuscarCursoPorId(id));
         }
 
+        public ActionResult MostrarTurma(int id)
+        {
+            return View(MatriculaDAO.BuscarTurmas(id));
+        }
+
         
     }
 }

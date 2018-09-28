@@ -33,5 +33,10 @@ namespace MatriculasPrefeitura.DAL
                 context.SaveChanges();
             }
         }
+
+        public static List<Matricula> BuscarTurmas(int id)
+        {
+            return context.Matriculas.Where(x => x.CursoMatriculado.CursoId == id).ToList();
+        }
     }
 }
