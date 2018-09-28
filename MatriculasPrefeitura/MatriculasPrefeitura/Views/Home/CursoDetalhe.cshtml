@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "CursoDetalhe";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    List<MatriculasPrefeitura.Models.Matricula> alunos = ViewBag.Alunos;
 }
 
 <h2>CursoDetalhe</h2>
@@ -30,11 +31,16 @@
             <b>Cidade: @Model.Localidade</b><br />
             <b>CEP: @Model.CEP</b><br />
             <b>UF: @Model.UF</b><br />
-            @Html.ActionLink("Realizar Matrícula", "Index", "Matricula", null, new { @class = "btn btn-info" })
+            @Html.ActionLink("Realizar Matrícula", "Index", "Matricula", null, new { @class = "btn btn-info" })<br />
+        </td>
+        <td>
             <b>Lista Alunos no curso: </b>
-            @foreach(var aluno in Model.matriculas)
+            @foreach(var aluno in alunos)
             {
-                <b>Matrícula: </b> @Model.matriculas
+                <b>Matrícula: </b> @aluno.numMatricula <br>
+                <b>Número Matrícula Aluno: </b> @aluno.AlunoMatriculado.NumAluno <br>
+                <b>Nome Aluno: </b> @aluno.AlunoMatriculado.NomeAluno <br>
+
             }
         </td>
     </tr>
