@@ -40,9 +40,12 @@ namespace MatriculasPrefeitura.DAL
 
         public static bool AlterarCurso(Curso curso)
         {
-            if (context.Cursos.Include(p => p.Professor).Include(c => c.Categoria).Where(x => x.CursoId == curso.CursoId && x.NomeCurso == curso.NomeCurso).Single() == null)
+            if (context.Cursos.Include("Professor").Include("Categoria").FirstOrDefault(x => x.CursoId == curso.CursoId && x.NomeCurso == curso.NomeCurso) == null)
             {
-                context.Entry(curso).State = EntityState.Modified;
+                var categoria = context.Categorias.First();
+                var professor = context.Professores.First();
+                curso.Categoria = categoria;
+                curso.Professor = professor;
                 context.SaveChanges();
                 return true;
             }
@@ -57,6 +60,11 @@ namespace MatriculasPrefeitura.DAL
         public static List<Curso> BuscarCursoPorCategoria(int? id)
         {
             return context.Cursos.Include("Categoria").Where(x => x.Categoria.CategoriaId == id).ToList();
+        }
+
+        public static List<Curso> ListarAlunos(int id)
+        {
+            return context.Cursos.Include("Categoria").Where(x => x.CursoId == id).ToList();
         }
     }
 }

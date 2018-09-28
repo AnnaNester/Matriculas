@@ -193,6 +193,14 @@
     <Compile Include="Migrations\201809260231327_jojojo.Designer.cs">
       <DependentUpon>201809260231327_jojojo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809281157451_AlterTable.cs" />
+    <Compile Include="Migrations\201809281157451_AlterTable.Designer.cs">
+      <DependentUpon>201809281157451_AlterTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809281417101_AlterTable1.cs" />
+    <Compile Include="Migrations\201809281417101_AlterTable1.Designer.cs">
+      <DependentUpon>201809281417101_AlterTable1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluno.cs" />
     <Compile Include="Models\CategoriaCurso.cs" />
@@ -245,6 +253,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809260231327_jojojo.resx">
       <DependentUpon>201809260231327_jojojo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809281157451_AlterTable.resx">
+      <DependentUpon>201809281157451_AlterTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809281417101_AlterTable1.resx">
+      <DependentUpon>201809281417101_AlterTable1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

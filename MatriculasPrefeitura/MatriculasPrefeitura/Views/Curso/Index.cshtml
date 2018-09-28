@@ -21,6 +21,7 @@
             <th>Quantidade</th>
             <th>Categoria</th>
             <th>Professor</th>
+            <th>Foto Curso</th>
             <th>Alterar</th>
             <th>Remover</th>
         </tr>
@@ -32,6 +33,7 @@
                 <td>@curso.DuracaoCurso</td>
                 <td>@curso.QtdeVagas</td>
                 <td>@curso.Categoria.NomeCategoria</td>
+                <td>@curso.Professor.NomeProfessor</td>
                 <td><img src="~/Images/@curso.FotoCurso" alt="Imagem do Curso" style="width:100px; height:100px" /></td>
                 <td>@Html.ActionLink("Alterar", "AlterarCurso", "Curso", new { id = curso.CursoId }, new { @class = "btn btn-info" })</td>
                 <td>@Html.ActionLink("Remover", "RemoverCurso", "Curso", new { id = curso.CursoId }, new { @class = "btn btn-danger" })</td>

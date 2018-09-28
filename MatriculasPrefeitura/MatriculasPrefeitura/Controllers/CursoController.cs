@@ -61,6 +61,7 @@ namespace MatriculasPrefeitura.Controllers
                     }
 
                     curso.Categoria = CategoriaDAO.BuscarCategoriaPorId(Categorias);
+                    curso.Professor = ProfessorDAO.BuscarProfessorPorId(Professores);
                     if (CursoDAO.CadastrarCurso(curso))
                     {
                         return RedirectToAction("Index", "Curso");
@@ -93,10 +94,8 @@ namespace MatriculasPrefeitura.Controllers
 
         [HttpPost]
         public ActionResult AlterarCurso([Bind(Include = "NumProfessor, CategoriaId, CursoId, NomeCurso, DescricaoCurso, DuracaoCurso, QtdeVagas, CEP, Logradouro, Localidade, Bairro, UF, Numero")]
-        Curso cursoAlterado)
+        Curso cursoAlterado, int? Professores, int? Categorias)
         {
-            ViewBag.Categorias = new SelectList(CategoriaDAO.RetornarCategoria(), "CategoriaId", "NomeCategoria");
-            ViewBag.Professores = new SelectList(ProfessorDAO.RetornarProfessores(), "NumProfessor", "NomeProfessor");
             if (ModelState.IsValid)
             {
                 Curso cursoOriginal = CursoDAO.BuscarCursoPorId(cursoAlterado.CursoId);
@@ -104,14 +103,15 @@ namespace MatriculasPrefeitura.Controllers
                 cursoAlterado.DescricaoCurso = cursoAlterado.DescricaoCurso;
                 cursoOriginal.DuracaoCurso = cursoAlterado.DuracaoCurso;
                 cursoOriginal.QtdeVagas = cursoAlterado.QtdeVagas;
-                cursoOriginal.Categoria = cursoAlterado.Categoria;
-                cursoOriginal.Professor = cursoAlterado.Professor;
+                cursoAlterado.FotoCurso = cursoOriginal.FotoCurso;
                 cursoAlterado.CEP = cursoOriginal.CEP;
                 cursoAlterado.Logradouro = cursoOriginal.Logradouro;
                 cursoAlterado.Localidade = cursoOriginal.Localidade;
                 cursoAlterado.Bairro = cursoOriginal.Bairro;
                 cursoAlterado.UF = cursoOriginal.UF;
                 cursoAlterado.Numero = cursoOriginal.Numero;
+                cursoAlterado.Categoria = cursoOriginal.Categoria;
+                cursoAlterado.Professor = cursoOriginal.Professor;
 
 
                 if (CursoDAO.AlterarCurso(cursoAlterado))
@@ -191,6 +191,11 @@ namespace MatriculasPrefeitura.Controllers
             }
 
             return RedirectToAction("EditarCurso", "Curso");
+        }
+
+        public ActionResult Matriculas(Curso curso)
+        {
+            return ViewBag.Alunos = CursoDAO.ListarAlunos(curso.CursoId);
         }
     }
 }

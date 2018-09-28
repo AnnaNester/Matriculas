@@ -31,7 +31,7 @@ namespace MatriculasPrefeitura.DAL
             }
         }
 
-        public static Professor BuscarProfessorPorId(int id)
+        public static Professor BuscarProfessorPorId(int? id)
         {
             return context.Professores.Find(id);
         }
