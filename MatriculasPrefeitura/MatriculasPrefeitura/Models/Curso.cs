@@ -53,7 +53,7 @@ namespace MatriculasPrefeitura.Models
         [Display(Name = "Número do curso")]
         public int Numero { get; set; }
 
-        public virtual List<Matricula> matriculas { get; set; }
+        public List<Matricula> matriculas { get; set; }
 
     }
 }
