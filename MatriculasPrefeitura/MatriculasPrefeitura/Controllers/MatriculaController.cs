@@ -17,6 +17,16 @@ namespace MatriculasPrefeitura.Controllers
             return View();
         }
 
+        public ActionResult MatricularAluno()
+        {
+            if (TempData["Mensagem"] != null)
+            {
+                ModelState.AddModelError("", TempData["Mensagem"].ToString());
+            }
+            return View((Matricula)TempData["Matricula"]);
+        }
+
+        [HttpPost]
         public ActionResult MatricularAluno(Matricula matricula)
         {
             if (AlunoDAO.BuscarAlunoPorCPF(matricula.AlunoMatriculado) == null)
@@ -26,9 +36,12 @@ namespace MatriculasPrefeitura.Controllers
             else
             {
                 Aluno alu = AlunoDAO.BuscarAlunoPorCPF(matricula.AlunoMatriculado);
+                Curso cur = CursoDAO.BuscarCursoPorId(matricula.CursoMatriculado);
                 matricula.AlunoMatriculado = alu;
+                matricula.CursoMatriculado = cur;
                 AlunoDAO.MatricularAluno(matricula);
                 ModelState.AddModelError("", "Matrícula realizada com sucesso!");
+                return View(matricula);
             }
 
             return View("Index", "Home");

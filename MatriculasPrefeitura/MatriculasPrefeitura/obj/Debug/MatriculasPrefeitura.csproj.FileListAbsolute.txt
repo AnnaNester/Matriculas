@@ -316,3 +316,5 @@ C:\Users\Aluno\source\repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura
 C:\Users\Aluno\source\repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.AlterTable1.resources
 C:\Users\anna\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.AlterTable.resources
 C:\Users\anna\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.AlterTable1.resources
+C:\Users\Mirella\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.AlterTable.resources
+C:\Users\Mirella\Source\Repos\Matriculas\MatriculasPrefeitura\MatriculasPrefeitura\obj\Debug\MatriculasPrefeitura.Migrations.AlterTable1.resources

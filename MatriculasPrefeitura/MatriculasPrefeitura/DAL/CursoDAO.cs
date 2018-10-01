@@ -32,6 +32,11 @@ namespace MatriculasPrefeitura.DAL
             return context.Cursos.Find(id);
         }
 
+        public static Curso BuscarCursoPorId(Curso curso)
+        {
+            return context.Cursos.FirstOrDefault(x => x.CursoId.Equals(curso.CursoId));
+        }
+
         public static void RemoverCurso(int id)
         {
             context.Cursos.Remove(BuscarCursoPorId(id));
