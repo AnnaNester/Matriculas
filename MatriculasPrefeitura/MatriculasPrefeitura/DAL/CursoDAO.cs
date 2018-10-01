@@ -71,5 +71,10 @@ namespace MatriculasPrefeitura.DAL
         {
             return context.Cursos.Include("Categoria").Where(x => x.CursoId == id).ToList();
         }
+
+        public static List<Matricula> ListarAlunoPorCurso(int id)
+        {
+            return context.Matriculas.Include("AlunoMatriculado").Where(x => x.CursoMatriculado.CursoId == id).ToList();
+        }
     }
 }

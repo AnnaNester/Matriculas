@@ -17,6 +17,7 @@ namespace MatriculasPrefeitura.Controllers
         // GET: Aluno
         public ActionResult Index()
         {
+            ViewBag.Data = DateTime.Now;
             return View(AlunoDAO.RetornarAlunos());
         }
 

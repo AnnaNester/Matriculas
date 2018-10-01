@@ -1,5 +1,7 @@
-﻿@model MatriculasPrefeitura.Models.Curso
+﻿@using MatriculasPrefeitura.Models
+@model List<Matricula>
 @{
+    List<Aluno> mat = ViewBag.Alunos;
     Layout = null;
 }
 
@@ -8,10 +10,11 @@
 <table style="margin-left: 30px">
     <tr>
         <td colspan="2">
-            @foreach(var aluno in Model.matriculas)
+            @foreach (var aluno in Model)
             {
-                <b>Matrícula: </b> @aluno.numMatricula
-                <b>Nome: </b> @aluno.AlunoMatriculado
+                <b>Curso: </b> @aluno.CursoMatriculado.CursoId
+                <b>Matrícula: </b> @aluno.AlunoMatriculado.NumAluno
+                <b>Nome: </b> @aluno.AlunoMatriculado.NomeAluno
             }
         </td>
     </tr>

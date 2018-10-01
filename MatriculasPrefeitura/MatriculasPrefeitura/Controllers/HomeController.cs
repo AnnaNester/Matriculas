@@ -28,7 +28,7 @@ namespace MatriculasPrefeitura.Controllers
 
         public ActionResult MostrarTurma(int id)
         {
-            return View(MatriculaDAO.BuscarTurmas(id));
+            return View(CursoDAO.ListarAlunoPorCurso(id));
         }
 
         
